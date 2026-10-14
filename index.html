@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SpEd Log Pro Training</title>
+<style>
+  :root {
+    --navy: #0b1324; --navy2: #121d36; --blue: #3b82f6; --blue-deep: #234f96; --sky: #8ec5ff;
+    --gold: #fbbf24; --green: #22c55e; --red: #ef4444; --paper: #f7f3ea; --ink: #14110d; --muted: #5b544a;
+    --line: #ddd3bf;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font: 16px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--paper); }
+  a { color: inherit; }
+
+  /* ---------- top bar ---------- */
+  .top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; padding: 12px 28px;
+         background: rgba(11,19,36,.86); backdrop-filter: blur(10px); color: #fff; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; text-decoration: none; }
+  .logo .mark { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 26px; height: 26px; padding: 4px;
+                border-radius: 7px; background: linear-gradient(135deg, var(--blue), #6366f1); }
+  .logo .mark i { background: #fff; border-radius: 2px; }
+  .logo b { color: var(--sky); }
+  .top nav { margin-left: auto; display: flex; gap: 20px; font-size: 14px; }
+  .top nav a { text-decoration: none; opacity: .8; }
+  .top nav a:hover { opacity: 1; }
+  .pill-cta { background: var(--gold); color: var(--navy); padding: 7px 14px; border-radius: 999px; font-weight: 700;
+              text-decoration: none; font-size: 14px; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; overflow: hidden; color: #fff; padding: 70px 28px 90px;
+          background: radial-gradient(1200px 500px at 85% -10%, #2b4fa8 0%, transparent 60%),
+                      radial-gradient(800px 500px at -10% 110%, #3b1d6e 0%, transparent 55%), var(--navy); }
+  .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+                 background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 22px 22px; }
+  .hero-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid;
+                grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .08em;
+             text-transform: uppercase; color: var(--sky); font-weight: 700; }
+  .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(34,197,94,.25); }
+  h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.03; margin: 14px 0 18px; letter-spacing: -.02em; }
+  h1 .grad { background: linear-gradient(90deg, var(--sky), #c4b5fd 60%, var(--gold)); -webkit-background-clip: text;
+             background-clip: text; color: transparent; }
+  .lede { font-size: 19px; color: #cdd6ea; max-width: 34em; margin: 0 0 26px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 12px; font-weight: 700;
+         text-decoration: none; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 30px rgba(59,130,246,.45); }
+  .btn-ghost { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+  .search { margin-top: 26px; position: relative; max-width: 520px; }
+  .search input { width: 100%; padding: 15px 18px 15px 48px; border-radius: 14px; border: 0; font: inherit; font-size: 16px;
+                  background: rgba(255,255,255,.96); color: var(--ink); box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+  .search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #7a7368; }
+  .results { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: #fff; color: var(--ink);
+             border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.35); overflow: hidden; display: none; z-index: 5; }
+  .results a { display: flex; justify-content: space-between; padding: 11px 16px; text-decoration: none; border-top: 1px solid #eee; }
+  .results a:first-child { border-top: 0; }
+  .results a:hover { background: #eef4ff; }
+  .results small { color: var(--muted); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; font-size: 13px; color: #aab6cf; }
+  .chips button { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #dfe7f7;
+                  padding: 5px 11px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 13px; }
+
+  /* ---------- hero device + live demo ---------- */
+  .device { position: relative; border-radius: 16px; padding: 10px; background: linear-gradient(160deg, #2a3655, #141c31);
+            box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08);
+            transform: perspective(1400px) rotateY(-8deg) rotateX(3deg); transition: transform .5s; }
+  .device:hover { transform: perspective(1400px) rotateY(0) rotateX(0); }
+  .device .bar { display: flex; gap: 6px; padding: 2px 4px 9px; }
+  .device .bar i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+  .device .bar i:nth-child(2) { background: #febc2e; } .device .bar i:nth-child(3) { background: #28c840; }
+  .screen { position: relative; border-radius: 9px; overflow: hidden; aspect-ratio: 1100 / 820; background: #0d1426; }
+  .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s; }
+  .screen img.on { opacity: 1; }
+  .screen svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .pen { fill: none; stroke: #ff2d2d; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900;
+         filter: drop-shadow(0 0 3px rgba(255,45,45,.4)); }
+  .pen.draw { animation: draw 1s .5s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .caption { position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(11,19,36,.88); color: #fff;
+             border-radius: 10px; padding: 10px 14px; font-size: 14px; display: flex; gap: 10px; align-items: center;
+             border: 1px solid rgba(255,255,255,.12); }
+  .caption .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--blue); display: grid;
+                place-items: center; font-weight: 800; font-size: 13px; }
+  .dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+  .dots button { width: 9px; height: 9px; border-radius: 50%; border: 0; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; }
+  .dots button.on { background: var(--gold); width: 24px; border-radius: 6px; }
+
+  /* ---------- promise strip ---------- */
+  .promise { max-width: 1180px; margin: -46px auto 0; position: relative; z-index: 2; display: grid;
+             grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 0 28px; }
+  .stat { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 14px 34px rgba(20,17,13,.12); }
+  .stat .big { font-size: 34px; font-weight: 800; letter-spacing: -.02em; color: var(--blue-deep); }
+  .stat p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+  /* ---------- sections ---------- */
+  section.wrap { max-width: 1180px; margin: 0 auto; padding: 70px 28px 10px; }
+  .kicker { color: var(--blue-deep); font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+  h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 6px 0 10px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); max-width: 46em; margin: 0 0 28px; font-size: 17px; }
+
+  /* journey */
+  .journey { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .journey::before { content: ""; position: absolute; left: 6%; right: 6%; top: 34px; border-top: 3px dashed #c8bda6; }
+  .stop { position: relative; text-align: center; text-decoration: none; }
+  .stop .badge { width: 68px; height: 68px; margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center;
+                 font-weight: 800; font-size: 22px; color: #fff; background: linear-gradient(135deg, var(--blue), #6366f1);
+                 box-shadow: 0 10px 22px rgba(59,130,246,.35); border: 4px solid var(--paper); transition: transform .2s; }
+  .stop:hover .badge { transform: scale(1.08) rotate(-4deg); }
+  .stop.done .badge { background: var(--green); }
+  .stop.soon { opacity: .55; pointer-events: none; }
+  .stop.soon span::after { content: " · coming soon"; }
+  .tile li.soon { opacity: .55; }
+  .tile li.soon small::after { content: " · soon"; }
+  .stop b { display: block; font-size: 15px; }
+  .stop span { font-size: 13px; color: var(--muted); }
+
+  /* tiles */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .tile { background: #fff; border-radius: 18px; padding: 22px; text-decoration: none; position: relative; overflow: hidden;
+          border: 1px solid var(--line); transition: transform .18s, box-shadow .18s; }
+  .tile:hover { transform: translateY(-4px); box-shadow: 0 18px 34px rgba(20,17,13,.14); }
+  .tile .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 12px; color: #fff; }
+  .tile h3 { margin: 0 0 4px; font-size: 19px; }
+  .tile p { margin: 0 0 12px; color: var(--muted); font-size: 14.5px; }
+  .tile ul { margin: 0; padding: 0; list-style: none; font-size: 14.5px; }
+  .tile li { display: flex; justify-content: space-between; padding: 6px 0; border-top: 1px dashed #e7dfcf; }
+  .tile li small { color: var(--muted); }
+  .t-blue .ic { background: var(--blue); } .t-green .ic { background: #16a34a; } .t-gold .ic { background: #d97706; }
+  .t-purple .ic { background: #7c3aed; } .t-red .ic { background: #dc2626; } .t-teal .ic { background: #0d9488; }
+
+  /* rule banner */
+  .rule { margin: 70px auto 0; max-width: 1124px; border-radius: 22px; padding: 34px 38px; color: #fff; display: grid;
+          grid-template-columns: auto 1fr auto; gap: 26px; align-items: center;
+          background: linear-gradient(120deg, var(--blue-deep), #4338ca 60%, #7c3aed); box-shadow: 0 20px 44px rgba(67,56,202,.35); }
+  .rule .save { font-weight: 800; padding: 14px 22px; border-radius: 12px; background: var(--gold); color: var(--navy);
+                animation: saveflip 4s infinite; min-width: 190px; text-align: center; }
+  @keyframes saveflip { 0%,45% { background: var(--gold); } 50%,95% { background: var(--green); color: #fff; } }
+  .rule .save::after { content: "Unsaved changes"; animation: savetext 4s infinite; }
+  @keyframes savetext { 0%,45% { content: "Unsaved changes"; } 50%,95% { content: "Saved ✓"; } }
+  .rule h3 { margin: 0 0 4px; font-size: 24px; }
+  .rule p { margin: 0; color: #dde4ff; }
+
+  footer { margin-top: 80px; padding: 34px 28px; background: var(--navy); color: #aab6cf; font-size: 14px; }
+  footer .in { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .device { transform: none; }
+    .promise { grid-template-columns: 1fr 1fr; }
+    .tiles { grid-template-columns: 1fr; }
+    .journey { grid-template-columns: repeat(3, 1fr); row-gap: 26px; }
+    .journey::before { display: none; }
+    .rule { grid-template-columns: 1fr; text-align: center; }
+    .top nav { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .pen { stroke-dashoffset: 0; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="./"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <nav><a href="#start">Start here</a><a href="#tasks">All tasks</a><a href="#tour">60-second tour</a></nav>
+  <a class="pill-cta" href="lessons/roster.html">Start the course →</a>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Matches SpEd Log Pro 0.4.17</div>
+      <h1>Log the day in minutes.<br><span class="grad">Paste the service log in seconds.</span></h1>
+      <p class="lede">Short, picture-by-picture lessons for every job in SpEd Log Pro, with the exact spot to click
+         circled in red. Start with setup, or jump straight to what you need today.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="lessons/roster.html">▶ Start here: your roster</a>
+        <a class="btn btn-ghost" href="#tour">Watch the 60-second tour</a>
+      </div>
+      <div class="search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="What do you want to do? Try “ARD” or “absent”" autocomplete="off">
+        <div class="results" id="results"></div>
+      </div>
+      <div class="chips">Popular:
+        <button data-q="absent">Mark an absence</button><button data-q="paste">Paste the service log</button>
+        <button data-q="ARD">ARD change</button><button data-q="two classes">Two classes</button>
+      </div>
+    </div>
+
+    <div id="tour">
+      <div class="device">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen" id="screen">
+          <img src="images/05-calendar-preview.png" alt="">
+          <img src="images/09-add-student-picker.png" alt="">
+          <img src="images/12-unsaved-changes.png" alt="" class="on">
+          <img src="images/13-saved.png" alt="">
+          <img src="images/14-service-log.png" alt="">
+          <svg viewBox="0 0 1100 820" preserveAspectRatio="none"><ellipse id="pen" class="pen" cx="0" cy="0" rx="10" ry="10"/></svg>
+          <div class="caption"><span class="n" id="capn">1</span><span id="capt"></span></div>
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div>
+
+<div class="promise">
+  <div class="stat"><div class="big">1 click</div><p>to save a whole class for the day</p></div>
+  <div class="stat"><div class="big">1 paste</div><p>per student per week into the real service log</p></div>
+  <div class="stat"><div class="big">0 bytes</div><p>leave your computer. No internet, no accounts</p></div>
+  <div class="stat"><div class="big">18</div><p>bite-size lessons on the way, each with real screenshots</p></div>
+</div>
+
+<section class="wrap" id="start">
+  <div class="kicker">New here?</div>
+  <h2>Your first day, in six stops</h2>
+  <p class="sub">Click a stop and follow along in your own copy of the app. Each one takes about five minutes,
+     and this page remembers which stops you've finished, in your own browser only.</p>
+  <div class="journey">
+    <a class="stop soon" href="#"><div class="badge">1</div><b>Back up</b><span>Your first Drive copy</span></a>
+    <a class="stop soon" href="#"><div class="badge">2</div><b>Calendar</b><span>Load the school year</span></a>
+    <a class="stop soon" href="#"><div class="badge">3</div><b>Bell schedule</b><span>Your real period times</span></a>
+    <a class="stop" href="lessons/roster.html"><div class="badge">4</div><b>Roster</b><span>Drop in your CSV</span></a>
+    <a class="stop soon" href="#"><div class="badge">5</div><b>Students</b><span>Add your caseload</span></a>
+    <a class="stop soon" href="#"><div class="badge">6</div><b>First day</b><span>Log it and Save</span></a>
+  </div>
+</section>
+
+<section class="wrap" id="tasks">
+  <div class="kicker">Every lesson</div>
+  <h2>Pick what you need</h2>
+  <p class="sub">Every lesson is the same shape: the steps, a picture with the click circled, how to tell it worked, and
+     the mistakes to avoid. Each one prints too.</p>
+  <div class="tiles">
+    <a class="tile t-blue" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12l5 5L20 6"/></svg></div>
+      <h3>Every day</h3><p>The two-minute routine for each class.</p>
+      <ul><li class="soon">Log a day <small>5 min</small></li><li class="soon">Absences &amp; whole-class codes <small>3 min</small></li><li class="soon">Catch up on missed days <small>3 min</small></li></ul></a>
+    <a class="tile t-green" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
+      <h3>Paste &amp; report</h3><p>Get it into the real service log.</p>
+      <ul><li class="soon">Paste a week into the log <small>3 min</small></li><li class="soon">Minutes report <small>4 min</small></li><li class="soon">Accommodations report <small>4 min</small></li></ul></a>
+    <a class="tile t-gold" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v18M3 12h18"/></svg></div>
+      <h3>Students</h3><p>Adding and keeping them up to date.</p>
+      <ul><li class="soon">Add a student <small>3 min</small></li><li class="soon">A student in two classes <small>5 min</small></li><li class="soon">Leaves or comes back <small>4 min</small></li></ul></a>
+    <a class="tile t-purple" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+      <h3>Goals</h3><p>Track progress without the paperwork.</p>
+      <ul><li class="soon">Set up goal tracking <small>6 min</small></li><li class="soon">Record progress <small>3 min</small></li><li class="soon">Import a lesson <small>4 min</small></li></ul></a>
+    <a class="tile t-red" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <h3>When the IEP changes</h3><p>ARDs, minutes, accommodations.</p>
+      <ul><li class="soon">Enter an ARD change <small>4 min</small></li><li class="soon">Edit accommodations <small>3 min</small></li><li class="soon">Next ARD date <small>1 min</small></li></ul></a>
+    <a class="tile t-teal" href="#"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg></div>
+      <h3>Keep it safe</h3><p>Backups and the start of a new year.</p>
+      <ul><li class="soon">Weekly Drive backup <small>2 min</small></li><li class="soon">Restore a backup <small>4 min</small></li><li class="soon">August year-end <small>10 min</small></li></ul></a>
+  </div>
+</section>
+
+<div class="rule">
+  <div class="save"></div>
+  <div><h3>The one rule: nothing saves until you click Save.</h3>
+    <p>Yellow means you have changes waiting. Green means they're saved. Switch tabs with yellow showing and the app asks
+       first, so nothing you typed disappears.</p></div>
+  <a class="btn btn-primary" href="#tour" style="background:#fff;color:var(--blue-deep);box-shadow:none">See it in action →</a>
+</div>
+
+<footer><div class="in">
+  <span>SpEd Log Pro Training · for teachers using SpEd Log Pro 0.4.17 · all students shown are made up</span>
+  <span>Questions? Ask the person who sent you this link.</span>
+</div></footer>
+
+<script>
+  // 60-second tour: each frame shows a real screenshot with the click circled in red.
+  const frames = [
+    { t: 'Load the school calendar once, from a copy of your service log.', e: [174, 716, 118, 34] },
+    { t: 'Type a name or ID, and pick your student from the roster.', e: [175, 330, 130, 24] },
+    { t: 'Mark the accommodations, type the activity. Save turns yellow.', e: [229, 194, 92, 30] },
+    { t: 'Click Save. Green means it’s in.', e: [186, 194, 62, 30] },
+    { t: 'One click gives you the week, ready to paste into the real log.', e: [114, 537, 54, 30] },
+  ];
+  const imgs = [...document.querySelectorAll('#screen img')];
+  const pen = document.getElementById('pen');
+  const dots = document.getElementById('dots');
+  let i = 0, timer;
+  frames.forEach((_, k) => { const b = document.createElement('button'); b.setAttribute('aria-label', 'Step ' + (k + 1)); b.onclick = () => show(k, true); dots.appendChild(b); });
+  function show(k, manual) {
+    i = k;
+    imgs.forEach((im, n) => im.classList.toggle('on', n === k));
+    [...dots.children].forEach((d, n) => d.classList.toggle('on', n === k));
+    const [cx, cy, rx, ry] = frames[k].e;
+    pen.setAttribute('cx', cx); pen.setAttribute('cy', cy); pen.setAttribute('rx', rx); pen.setAttribute('ry', ry);
+    pen.classList.remove('draw'); void pen.getBBox(); pen.classList.add('draw');
+    document.getElementById('capn').textContent = k + 1;
+    document.getElementById('capt').textContent = frames[k].t;
+    clearInterval(timer); timer = setInterval(() => show((i + 1) % frames.length), 4500);
+  }
+  show(2); // open on a screen with students on it
+
+  // Search: instant results as you type.
+  const lessons = [
+    ['Log a day', 'Every day', 'activity save chips accommodations'], ['Absences & whole-class codes', 'Every day', 'absent AB SAB FLEX sub code'],
+    ['Catch up on missed days', 'Every day', 'unresolved missed late'], ['Paste a week into the service log', 'Paste & report', 'paste copy service log block'],
+    ['Minutes report', 'Paste & report', 'minutes compliance short'], ['Accommodations report', 'Paste & report', 'declined accommodations'],
+    ['Your roster: make it, download it, drop it in', 'Start here', 'roster csv sheet download folder columns headings', 'lessons/roster.html'], ['Add a student', 'Students', 'add new'], ['A student in two classes', 'Students', 'two classes co-teach suffix period'],
+    ['Student leaves or comes back', 'Students', 'remove restore archive move period'], ['Set up goal tracking', 'Goals', 'goal TEKS mastery checklist rubric'],
+    ['Record goal progress', 'Goals', 'alert flag progress trials'], ['Import a lesson', 'Goals', 'lesson csv TEKS activity'],
+    ['Enter an ARD change', 'When the IEP changes', 'ARD minutes service type paste sheets'], ['Edit accommodations', 'When the IEP changes', 'accommodations remove add'],
+    ['Weekly Drive backup', 'Keep it safe', 'backup drive desktop'], ['August year-end', 'Keep it safe', 'year clear august new year calendar'],
+  ];
+  const q = document.getElementById('q'), res = document.getElementById('results');
+  function search(v) {
+    const s = v.trim().toLowerCase();
+    if (!s) { res.style.display = 'none'; return; }
+    const hits = lessons.filter(([n, c, k]) => (n + ' ' + c + ' ' + k).toLowerCase().includes(s)).slice(0, 6);
+    res.innerHTML = hits.length ? hits.map(([n, c, k, url]) => url ? `<a href="${url}">${n}<small>${c}</small></a>` : `<a style="opacity:.6">${n}<small>${c} · coming soon</small></a>`).join('') : '<a>No lesson matches that yet<small></small></a>';
+    res.style.display = 'block';
+  }
+  q.addEventListener('input', () => search(q.value));
+  document.querySelectorAll('.chips button').forEach((b) => b.onclick = () => { q.value = b.dataset.q; search(q.value); q.focus(); });
+  document.addEventListener('click', (e) => { if (!e.target.closest('.search')) res.style.display = 'none'; });
+</script>
+</body>
+</html>

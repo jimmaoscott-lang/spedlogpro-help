@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your roster: make it, download it, drop it in · SpEd Log Pro Training</title>
+<style>
+  :root { --navy:#0b1324; --blue:#3b82f6; --blue-deep:#234f96; --sky:#8ec5ff; --gold:#fbbf24; --green:#16a34a;
+          --red:#dc2626; --pen:#e11d1d; --paper:#f7f3ea; --card:#fff; --ink:#14110d; --muted:#5b544a; --line:#e2d9c6; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; color:var(--ink); background:var(--paper); }
+  a { color: inherit; }
+  .top { position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:14px; padding:12px 24px;
+         background:rgba(11,19,36,.92); backdrop-filter:blur(10px); color:#fff; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; text-decoration:none; }
+  .logo .mark { display:grid; grid-template-columns:1fr 1fr; gap:3px; width:24px; height:24px; padding:4px; border-radius:7px;
+                background:linear-gradient(135deg,var(--blue),#6366f1); }
+  .logo .mark i { background:#fff; border-radius:2px; }
+  .logo b { color:var(--sky); }
+  .top .mini-search { margin-left:auto; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); color:#dfe7f7;
+                      padding:7px 14px; border-radius:10px; font-size:14px; min-width:220px; }
+  .layout { overflow-x:hidden; display:grid; grid-template-columns:270px 1fr; max-width:1280px; margin:0 auto; }
+  aside { position:sticky; top:56px; align-self:start; height:calc(100vh - 56px); overflow:auto; padding:26px 18px;
+          border-right:1px solid var(--line); font-size:14.5px; }
+  aside h4 { margin:18px 0 6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  aside a { display:flex; align-items:center; gap:8px; padding:7px 10px; border-radius:9px; text-decoration:none; }
+  aside a:hover { background:#efe8da; }
+  aside a[href='#'] { opacity:.55; }
+  aside a.here { background:var(--blue-deep); color:#fff; font-weight:700; }
+  aside .tick { width:18px; height:18px; border-radius:50%; border:2px solid #c9bea8; flex:none; display:grid; place-items:center; font-size:11px; }
+  aside .tick.ok { background:var(--green); border-color:var(--green); color:#fff; }
+  main { padding:30px 44px 80px; min-width:0; }
+
+  .hero { border-radius:22px; padding:30px 32px; color:#fff; position:relative; overflow:hidden;
+          background:radial-gradient(700px 300px at 90% -20%, #3157b8 0%, transparent 60%), linear-gradient(120deg,#0b1324,#1c2a52); }
+  .hero::after { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+                 background-size:20px 20px; pointer-events:none; }
+  .crumbs { font-size:13px; color:var(--sky); font-weight:600; position:relative; }
+  .hero h1 { margin:8px 0 10px; font-size:clamp(28px,3.6vw,42px); line-height:1.08; position:relative; }
+  .hero h1 span { background:linear-gradient(90deg,var(--sky),#c4b5fd 60%,var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .facts { display:flex; gap:10px; flex-wrap:wrap; position:relative; }
+  .fact { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:6px 12px; border-radius:999px; font-size:13.5px; }
+  .journey-mini { display:flex; gap:6px; margin-top:18px; position:relative; align-items:center; font-size:13px; color:#cdd6ea; }
+  .journey-mini i { width:30px; height:6px; border-radius:4px; background:rgba(255,255,255,.2); }
+  .journey-mini i.done { background:var(--green); } .journey-mini i.now { background:var(--gold); }
+
+  .cols8 { list-style:none; padding:0; margin:12px 0 0; display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+  .cols8 li { background:#f3eee3; border:1px solid var(--line); border-radius:8px; padding:6px 9px; font-size:14px; }
+  .cols8 b { display:inline-grid; place-items:center; width:20px; height:20px; border-radius:5px; background:var(--blue-deep); color:#fff; font-size:12px; margin-right:6px; }
+  @media (max-width: 900px) { .cols8 { grid-template-columns:1fr 1fr; } }
+  .why { margin:22px 0 8px; background:#fff; border-left:5px solid var(--blue); border-radius:12px; padding:14px 18px; }
+  .part { margin:34px 0 8px; display:flex; align-items:center; gap:12px; }
+  .part span { background:var(--gold); color:var(--navy); font-weight:800; font-size:12px; letter-spacing:.08em;
+               text-transform:uppercase; padding:5px 10px; border-radius:8px; }
+  .part h2 { margin:0; font-size:24px; }
+
+  .step { display:grid; grid-template-columns:52px 1fr; gap:16px; background:var(--card); border:1px solid var(--line);
+          border-radius:18px; padding:20px 22px; margin:14px 0; box-shadow:0 6px 18px rgba(20,17,13,.06); }
+  .num { width:44px; height:44px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:19px; color:#fff;
+         background:linear-gradient(135deg,var(--blue),#6366f1); box-shadow:0 8px 18px rgba(59,130,246,.35); }
+  .step h3 { margin:6px 0 6px; font-size:19px; }
+  .step p { margin:0 0 10px; }
+  .kbd { display:inline-block; padding:1px 7px; border:1px solid #cfc5b0; border-bottom-width:3px; border-radius:6px; background:#fbf8f1;
+         font-size:13px; font-weight:600; }
+  .path { font-weight:700; color:var(--blue-deep); }
+  code { font-family:inherit; background:#efe8da; padding:1px 6px; border-radius:5px; }
+  .fig { position:relative; margin:10px 0 4px; }
+  .fig .label { position:absolute; top:-10px; right:12px; z-index:2; background:#fff7d6; border:1px solid #e9cf71; color:#7a5b00;
+                font-size:11.5px; font-weight:700; padding:2px 8px; border-radius:999px; }
+  .fig svg.pen { position:absolute; inset:0; z-index:5; width:100%; height:100%; pointer-events:none; overflow:visible; }
+  .fig svg.pen path { fill:none; stroke:var(--pen); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; opacity:.92; }
+  img.shot { display:block; width:100%; border-radius:10px; border:1px solid var(--line); }
+
+  /* drawn Google Sheet */
+  .gs { border:1px solid #c7c7c7; border-radius:10px; overflow:hidden; background:#fff; font:13px Arial, sans-serif; color:#202124; }
+  .gs .bar { display:flex; gap:16px; padding:8px 12px; border-bottom:1px solid #e0e0e0; background:#f9fbfd; font-size:13px; }
+  .gs .bar b { font-size:15px; }
+  .gs .menus { display:flex; gap:14px; padding:4px 12px; font-size:13px; color:#444; border-bottom:1px solid #e0e0e0; position:relative; }
+  .gs .menus .open { background:#e8eaed; border-radius:4px; padding:0 4px; }
+  .grid { display:grid; grid-template-columns:30px .9fr 1.5fr .8fr 1fr 1.9fr .8fr 1.5fr 1fr; font-size:12px; }
+  .gs { max-width:100%; }
+  .grid div { border-right:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:4px 6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .grid .h { background:#f8f9fa; color:#5f6368; text-align:center; }
+  .grid .hd { font-weight:700; background:#fafafa; white-space:normal; line-height:1.25; }
+  .grid .sel { background:#e8f0fe; }
+  .dd { position:absolute; background:#fff; border:1px solid #d6d6d6; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,.18);
+        font-size:13px; padding:4px 0; z-index:3; min-width:200px; }
+  .dd div { padding:5px 14px; display:flex; justify-content:space-between; gap:20px; }
+  .dd .on { background:#e8eaed; }
+  .dd .dim { color:#80868b; }
+
+  /* drawn File Explorer */
+  .fx { display:grid; grid-template-columns:1fr 70px 1fr; gap:0; align-items:center; }
+  .win { border:1px solid #c7c7c7; border-radius:10px; overflow:hidden; background:#fff; font:13px "Segoe UI", sans-serif; }
+  .win .t { background:#f3f3f3; padding:7px 12px; border-bottom:1px solid #e0e0e0; font-weight:600; display:flex; gap:8px; align-items:center; }
+  .win .row { display:flex; gap:10px; align-items:center; padding:8px 12px; border-bottom:1px solid #f0f0f0; }
+  .win .row.pick { background:#cce4f7; }
+  .ficon { width:18px; height:22px; border-radius:3px; background:#1e8e3e; position:relative; flex:none; }
+  .ficon::after { content:"CSV"; position:absolute; bottom:2px; left:0; right:0; font-size:6.5px; color:#fff; text-align:center; font-weight:700; }
+  .ficon.old { background:#9aa0a6; }
+  .arrow { text-align:center; font-size:34px; color:var(--pen); font-weight:800; }
+  .strike { text-decoration:line-through; color:#9aa0a6; }
+
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:30px; }
+  .box { border-radius:16px; padding:16px 18px; }
+  .box h4 { margin:0 0 8px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
+  .box ul { margin:0; padding-left:18px; } .box li { margin-bottom:6px; }
+  .ok { background:#e3f3e7; border:1px solid #b9dfc3; } .ok h4 { color:var(--green); }
+  .bad { background:#fbe6e3; border:1px solid #efc3bd; } .bad h4 { color:var(--red); }
+  .msg { background:#fff8e6; border:1px solid #efd9a4; } .msg h4 { color:#8a6200; }
+  .msg q { display:block; font-size:13.5px; background:#fff; border-left:3px solid var(--red); padding:6px 9px; margin:4px 0 8px;
+           border-radius:4px; quotes:none; }
+  .navbtns { display:flex; justify-content:space-between; gap:12px; margin-top:36px; }
+  .navbtns a { flex:1; text-decoration:none; border-radius:14px; padding:16px 20px; border:1px solid var(--line); background:#fff; }
+  .navbtns a small { display:block; color:var(--muted); font-size:12.5px; }
+  .navbtns a b { font-size:17px; }
+  .navbtns a.next { background:linear-gradient(120deg,var(--blue-deep),#4338ca); color:#fff; border:0; text-align:right; }
+  .navbtns a.next small { color:#cdd6ff; }
+  .done-row { margin-top:22px; display:flex; align-items:center; gap:12px; background:#fff; border:2px dashed #c9bea8; border-radius:14px; padding:14px 18px; }
+  .done-row input { width:22px; height:22px; accent-color:var(--green); }
+  .print { position:absolute; top:22px; right:24px; z-index:2; background:#fff; color:var(--navy); border:0; border-radius:10px;
+           padding:8px 14px; font-weight:700; cursor:pointer; }
+  @media (max-width: 900px) { .layout { grid-template-columns:1fr; } aside { display:none; } main { padding:18px; }
+    .grid3 { grid-template-columns:1fr; } .fx { grid-template-columns:1fr; } .arrow { transform:rotate(90deg); } .print { display:none; }
+    .gs { overflow-x:auto; } }
+  @media print { .top, aside, .navbtns, .done-row, .print { display:none !important; } .layout { display:block; } .step { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+
+<div class="layout">
+  <aside>
+    <h4>Start here</h4>
+    <a href="#"><span class="tick">1</span>Back up to Drive</a>
+    <a href="#"><span class="tick">2</span>Load the calendar</a>
+    <a href="#"><span class="tick">3</span>Set the bell schedule</a>
+    <a href="roster.html" class="here"><span class="tick">4</span>Your roster</a>
+    <a href="#"><span class="tick">5</span>Add your students</a>
+    <a href="#"><span class="tick">6</span>Log your first day</a>
+    <h4>Every day</h4>
+    <a href="#"><span class="tick"></span>Log a day</a><a href="#"><span class="tick"></span>Absences &amp; whole-class codes</a>
+    <a href="#"><span class="tick"></span>Catch up on missed days</a>
+    <h4>Students</h4>
+    <a href="#"><span class="tick"></span>Add a student</a><a href="#"><span class="tick"></span>A student in two classes</a>
+    <a href="#"><span class="tick"></span>Leaves or comes back</a>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Start here · Stop 4 of 6</div>
+      <h1>Your roster: <span>make it, download it, drop it in</span></h1>
+      <div class="facts"><span class="fact">⏱ About 10 minutes the first time</span><span class="fact">🔁 2 minutes each update</span><span class="fact">You need: Google Sheets</span></div>
+      <div class="journey-mini"><i></i><i></i><i></i><i class="now"></i><i></i><i></i><span>Stop 4 of 6</span></div>
+    </div>
+
+    <div class="why"><b>Why:</b> the app looks up each student's minutes, accommodations, and goal in your roster when you add them.
+      Your roster is a Google Sheet you keep; the app reads a downloaded copy of it from one folder on your computer. It only ever
+      <i>reads</i> it: it never changes your Sheet or adds anyone by itself.</div>
+
+    <div class="part"><span>Part 1</span><h2>Make the roster Sheet (once)</h2></div>
+
+    <div class="step"><div class="num">1</div><div>
+      <h3>Type these 8 headings in row 1, in this order</h3>
+      <p>Open a new Google Sheet and name it <code>Roster</code>. In row 1, type these headings across columns A to H, <b>exactly as written and in this order</b>. Keeping this order means Paste from Sheets works later, too:</p>
+      <div class="fig"><span class="label">Drawing of Google Sheets</span>
+        <div class="gs">
+          <div class="bar"><b>Roster</b><span style="color:#5f6368">File Edit View Insert Format Data</span></div>
+          <div class="grid">
+            <div class="h"></div><div class="h">A</div><div class="h">B</div><div class="h">C</div><div class="h">D</div><div class="h">E</div><div class="h">F</div><div class="h">G</div><div class="h">H</div>
+            <div class="h">1</div><div class="hd" data-pen="hd">Student ID</div><div class="hd">Name: Last, First</div><div class="hd">min per week</div><div class="hd">Qualifying condition</div><div class="hd">Accommodations</div><div class="hd">Service type</div><div class="hd">goal</div><div class="hd" data-pen="hd">Annual ARD Date</div>
+            <div class="h">2</div><div>0071234</div><div>Pancake, Waffles Quinn</div><div>160</div><div>SLD</div><div>Extended time…; Small group testing</div><div>ICS</div><div>Given a grade-level text…</div><div>3/20/2027</div>
+            <div class="h">3</div><div>4410982</div><div>Sprocket, Gizmo Alan</div><div>120</div><div>OHI</div><div>Frequent breaks; Graphic organizer</div><div>RES</div><div>Given a writing prompt…</div><div></div>
+          </div>
+        </div>
+      </div>
+          <ol class="cols8">
+        <li><b>A</b> Student ID</li><li><b>B</b> Name: Last, First</li><li><b>C</b> min per week</li><li><b>D</b> Qualifying condition</li>
+        <li><b>E</b> Accommodations</li><li><b>F</b> Service type</li><li><b>G</b> goal</li><li><b>H</b> Annual ARD Date</li>
+      </ol>
+    </div></div>
+
+    <div class="step"><div class="num">2</div><div>
+      <h3>Make column A plain text, so ID numbers keep their zeros</h3>
+      <p>Click the <b>A</b> at the top of column A, then <span class="path">Format → Number → Plain text</span>. Do this <b>before</b>
+         you type IDs, or <code>0071234</code> turns into <code>71234</code>.</p>
+      <div class="fig"><span class="label">Drawing of Google Sheets</span>
+        <div class="gs" style="position:relative;height:265px">
+          <div class="bar"><b>Roster</b></div>
+          <div class="menus"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span class="open">Format</span><span>Data</span></div>
+          <div class="dd" style="left:150px;top:68px"><div>Theme</div><div class="on">Number <span>▸</span></div><div>Text</div><div>Alignment</div><div>Wrapping</div></div>
+          <div class="dd" style="left:352px;top:92px"><div>Automatic</div><div class="on" data-pen="1">Plain text</div><div>Number <span class="dim">1,000.12</span></div><div>Percent <span class="dim">10.12%</span></div><div>Date <span class="dim">9/26/2008</span></div></div>
+        </div>
+      </div>
+    </div></div>
+
+    <div class="step"><div class="num">3</div><div>
+      <h3>Fill in one row per student</h3>
+      <p>Put all of a student's accommodations in <b>one cell</b>, separated by semicolons:
+         <code>Extended time on assignments and tests; Small group testing</code>. Minutes are a whole number. Dates can be typed
+         <code>3/20/2027</code>. A student in two of your classes gets two rows (a lesson on that is coming soon).</p>
+    </div></div>
+
+    <div class="part"><span>Part 2</span><h2>Download it and drop it in (every time you change the Sheet)</h2></div>
+
+    <div class="step"><div class="num">4</div><div>
+      <h3>Download the Sheet as a CSV</h3>
+      <p><span class="path">File → Download → Comma Separated Values (.csv)</span>. It lands in your <b>Downloads</b> folder,
+         named like <code>Roster - Sheet1.csv</code>.</p>
+      <div class="fig"><span class="label">Drawing of Google Sheets</span>
+        <div class="gs" style="position:relative;height:300px">
+          <div class="bar"><b>Roster</b></div>
+          <div class="menus"><span class="open">File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span></div>
+          <div class="dd" style="left:10px;top:68px"><div>New</div><div>Open</div><div>Make a copy</div><div class="on">Download <span>▸</span></div><div>Email</div><div>Print</div></div>
+          <div class="dd" style="left:212px;top:140px;min-width:290px"><div>Microsoft Excel (.xlsx)</div><div>OpenDocument (.ods)</div><div>PDF (.pdf)</div><div class="on" data-pen="1">Comma Separated Values (.csv)</div><div>Tab Separated Values (.tsv)</div></div>
+        </div>
+      </div>
+    </div></div>
+
+    <div class="step"><div class="num">5</div><div>
+      <h3>Drag it into the Roster folder, and take the old one out</h3>
+      <p>Open File Explorer (<span class="kbd">⊞ Win</span> + <span class="kbd">E</span>). Drag the new file from <b>Downloads</b> into
+         <code>C:\SpEd Log Pro Roster</code>. If Windows asks whether to <b>replace</b> the file with the same name, choose <b>Replace</b>. If an older CSV with a different name is there, <b>delete it</b>: the folder must hold exactly one.</p>
+      <div class="fig"><span class="label">Drawing of File Explorer</span>
+        <div class="fx">
+          <div class="win"><div class="t">📁 Downloads</div>
+            <div class="row pick" data-pen="1"><span class="ficon"></span>Roster - Sheet1.csv</div>
+            <div class="row"><span style="width:18px">📄</span>lesson plan.pdf</div>
+            <div class="row"><span style="width:18px">🖼</span>IMG_2041.jpg</div></div>
+          <div class="arrow">➜</div>
+          <div class="win"><div class="t">📁 C:\SpEd Log Pro Roster</div>
+            <div class="row"><span class="ficon"></span>Roster - Sheet1.csv</div>
+            <div class="row"><span class="ficon old"></span><span class="strike">Roster - Sheet1 (old).csv</span>&nbsp;🗑</div>
+            <div class="row" style="color:#5f6368;font-size:12px">Exactly one CSV in here.</div></div>
+        </div>
+      </div>
+    </div></div>
+
+    <div class="step"><div class="num">6</div><div>
+      <h3>Check it in the app</h3>
+      <p>In SpEd Log Pro: <span class="path">Settings → Roster → Read roster</span>. Each field should show one of your headings
+         beside it, and the count should match your number of students.</p>
+      <div class="fig"><img class="shot" src="../images/07-roster-read.png" alt="Read roster in SpEd Log Pro">
+        <svg class="pen" viewBox="0 0 1100 820" preserveAspectRatio="none"><path d="M164.7,236.1 L170.9,238.1 L176.1,240.6 L179.3,243.5 L180.5,246.6 L180.0,249.8 L178.6,252.8 L177.1,255.8 L175.7,258.7 L174.0,261.6 L171.3,264.4 L167.2,266.9 L161.8,269.0 L155.5,270.7 L149.0,272.1 L143.0,273.6 L137.3,275.3 L131.6,277.2 L125.5,279.1 L118.5,280.6 L110.8,281.5 L102.8,281.6 L95.0,281.1 L87.3,280.3 L79.8,279.5 L72.3,278.6 L64.7,277.5 L57.6,275.9 L51.5,273.8 L47.1,271.2 L44.2,268.2 L42.5,265.1 L41.0,262.2 L39.1,259.5 L36.5,256.9 L33.9,254.1 L32.0,251.2 L31.6,248.2 L32.9,245.2 L35.5,242.4 L38.6,239.6 L41.8,236.9 L45.0,234.0 L48.6,231.1 L53.3,228.3 L59.4,226.1 L66.9,224.6 L75.2,223.9 L83.7,223.8 L91.8,223.9 L99.5,224.0 L107.0,223.9 L114.7,223.9 L122.4,224.1 L129.8,224.9 L136.7,226.3 L142.9,228.1 L148.7,230.0 L154.6,231.8 L161.0,233.5 L167.8,235.3 L174.4,237.4 L179.8,240.0 L183.2,243.1 L184.4,246.3 L183.9,249.7 L182.5,252.9 L180.9,256.0 L179.4,259.0"/></svg>
+      </div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul>
+        <li><b>Read roster</b> says <code>Read "Roster - Sheet1.csv": 15 student rows.</code></li>
+        <li>On a period tab, clicking <b>District ID or name</b> lists your students.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul>
+        <li><b>Two CSVs in the folder.</b> Delete the old one every time.</li>
+        <li><b>Moving or adding columns.</b> Keep the 8 in this order. If you ever change them, download the CSV again before you paste a student.</li>
+        <li><b>Typing IDs before step 2.</b> The leading zeros are already gone; retype them.</li>
+        <li><b>Accommodations in separate cells.</b> One cell, semicolons.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4>
+        <q>No CSV file found in C:\SpEd Log Pro Roster\.</q>The file is still in Downloads: do step 5.
+        <q>More than one CSV file is in C:\SpEd Log Pro Roster\: … Keep only one there.</q>Delete the old file.
+        <q>The roster is missing a required column: …</q>A heading is misspelled: fix row 1 and download again.</div>
+    </div>
+
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this stop off on your Start-here path (saved in this browser only).</span></label>
+
+    <div class="navbtns">
+      <a href="../"><small>← Back to</small><b>All lessons</b></a>
+      <a class="next" style="opacity:.6"><small>Next stop · coming soon</small><b>Add your students</b></a>
+    </div>
+  </main>
+</div>
+<script>
+  // Red "pen" loops around every [data-pen] item in a drawn figure. Items sharing a value
+  // (data-pen="hd") get one loop around all of them. Redrawn when the window is resized.
+  function loop(cx, cy, rx, ry, seed) {
+    let d = '';
+    for (let i = 0; i <= 68; i += 1) {
+      const t = (2 * Math.PI * i) / 60 - 0.6;
+      const w = 1 + 0.05 * Math.sin(3 * t + seed) + 0.03 * Math.sin(7 * t + seed * 2);
+      const g = 1 + 0.06 * (i / 68);
+      d += (i ? ' L' : 'M') + (cx + rx * w * g * Math.cos(t)).toFixed(1) + ',' + (cy + ry * w * g * Math.sin(t)).toFixed(1);
+    }
+    return d;
+  }
+  function drawPens() {
+    document.querySelectorAll('.fig').forEach((fig, n) => {
+      const items = fig.querySelectorAll('[data-pen]');
+      if (!items.length) return;
+      let svg = fig.querySelector('svg.auto');
+      if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'pen auto'); fig.appendChild(svg); }
+      const box = fig.getBoundingClientRect();
+      svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+      const groups = new Map();
+      items.forEach((el) => {
+        const key = el.dataset.pen === '1' ? el : el.dataset.pen;
+        const r = el.getBoundingClientRect();
+        const g = groups.get(key) || { l: Infinity, t: Infinity, r: -Infinity, b: -Infinity };
+        g.l = Math.min(g.l, r.left); g.t = Math.min(g.t, r.top); g.r = Math.max(g.r, r.right); g.b = Math.max(g.b, r.bottom);
+        groups.set(key, g);
+      });
+      svg.innerHTML = [...groups.values()].map((g, k) => {
+        const cx = (g.l + g.r) / 2 - box.left, cy = (g.t + g.b) / 2 - box.top;
+        return `<path d="${loop(cx, cy, (g.r - g.l) / 2 + 12, (g.b - g.t) / 2 + 9, n + k + 1)}"/>`;
+      }).join('');
+    });
+  }
+  window.addEventListener('load', drawPens);
+  // "I did this": remembered in this browser only; nothing is sent anywhere.
+  const did = document.getElementById('did');
+  try { did.checked = localStorage.getItem('done:roster') === '1'; } catch (e) {}
+  did.addEventListener('change', () => { try { localStorage.setItem('done:roster', did.checked ? '1' : '0'); } catch (e) {} });
+  window.addEventListener('resize', drawPens);
+</script>
+</body>
+</html>
