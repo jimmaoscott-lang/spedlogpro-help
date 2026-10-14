@@ -4,6 +4,8 @@
 (function () {
   const lessons = window.LESSONS || [];
   const here = document.body.dataset.lesson;
+  // The NEW starburst for a lesson added in a newer app version (`newIn` in lessons.js).
+  const badge = (v) => `<span class="newburst" title="New in version ${v}"><span class="burst">NEW</span><small>for version ${v} and beyond</small></span>`;
   const done = (id) => { try { return localStorage.getItem('done:' + id) === '1'; } catch (e) { return false; } };
 
   // ---- the menu ----
@@ -25,6 +27,7 @@
       if (done(l.id)) { tick.className = 'tick ok'; tick.textContent = '✓'; }
       a.appendChild(tick);
       a.appendChild(document.createTextNode(l.title));
+      if (l.newIn) a.insertAdjacentHTML('beforeend', badge(l.newIn));
       if (l.url) a.href = l.url;
       else { a.className = 'soonlink'; const s = document.createElement('span'); s.className = 'soon'; s.textContent = 'soon'; a.appendChild(s); }
       if (l.id === here) a.classList.add('here');
@@ -39,9 +42,9 @@
     const built = (k) => lessons[k] && lessons[k].url;
     let p = i - 1; while (p >= 0 && !built(p)) p -= 1;
     let n = i + 1; while (n < lessons.length && !built(n)) n += 1;
-    const prev = p >= 0 ? `<a href="${lessons[p].url}"><small>← Previous</small><b>${lessons[p].title}</b></a>`
+    const prev = p >= 0 ? `<a href="${lessons[p].url}"><small>← Previous</small><b>${lessons[p].title}</b>${lessons[p].newIn ? badge(lessons[p].newIn) : ''}</a>`
                         : `<a href="../"><small>← Back to</small><b>All lessons</b></a>`;
-    const next = n < lessons.length ? `<a class="next" href="${lessons[n].url}"><small>Next →</small><b>${lessons[n].title}</b></a>`
+    const next = n < lessons.length ? `<a class="next" href="${lessons[n].url}"><small>Next →</small><b>${lessons[n].title}</b>${lessons[n].newIn ? badge(lessons[n].newIn) : ''}</a>`
                                     : `<a class="next" href="../"><small>You've reached the end →</small><b>All lessons</b></a>`;
     nav.innerHTML = prev + next;
   }

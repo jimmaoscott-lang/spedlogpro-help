@@ -127,3 +127,15 @@
   table.codes th { background:#efe8da; }
   table.codes mark { background:#ffe58a; padding:0 2px; border-radius:2px; }
   p.notice { margin:34px 0 0; font-size:12.5px; color:var(--muted); text-align:center; }
+
+/* "NEW" starburst beside every link to a lesson added in a newer version */
+.newburst { display:inline-flex; align-items:center; gap:5px; vertical-align:middle; margin-left:6px; white-space:nowrap; }
+.newburst .burst { width:30px; height:30px; flex:none; display:grid; place-items:center; background:#facc15;
+  clip-path: polygon(50.0% 0.0%, 57.6% 11.7%, 69.1% 3.8%, 71.7% 17.6%, 85.4% 14.6%, 82.4% 28.3%, 96.2% 30.9%, 88.3% 42.4%, 100.0% 50.0%, 88.3% 57.6%, 96.2% 69.1%, 82.4% 71.7%, 85.4% 85.4%, 71.7% 82.4%, 69.1% 96.2%, 57.6% 88.3%, 50.0% 100.0%, 42.4% 88.3%, 30.9% 96.2%, 28.3% 82.4%, 14.6% 85.4%, 17.6% 71.7%, 3.8% 69.1%, 11.7% 57.6%, 0.0% 50.0%, 11.7% 42.4%, 3.8% 30.9%, 17.6% 28.3%, 14.6% 14.6%, 28.3% 17.6%, 30.9% 3.8%, 42.4% 11.7%); color:#dc2626; font:900 9px/1 system-ui, sans-serif; letter-spacing:.02em;
+  transform: rotate(-12deg); }
+.newburst small { font-size:11px; font-weight:600; color:#b45309; }
+aside a:has(.newburst) { flex-wrap:wrap; }
+aside a .newburst { flex-basis:100%; margin:2px 0 0 26px; white-space:normal; }
+aside a.here .newburst small { color:#fde68a; }
+.hero .newburst small { color:#fde68a; }
+.navbtns a .newburst { margin-top:4px; }

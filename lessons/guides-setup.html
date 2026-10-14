@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Leveled guides: set up · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="guidesetup">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Goals <span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span></div>
+      <h1>Leveled guides: <span>set up</span></h1>
+      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Once per lesson</span><span class="fact">You need: the lesson's TEKS Alignment and Guide Supports files, in one folder</span></div>
+    </div>
+    <div class="why"><b>Why:</b> your Leveled Guide Builder also writes a Guide Supports file: which supports (word bank, sentence stems, chunking…) it built into each level of the guide. Import it with the lesson, and on a guide day the app shows which of each student's accommodations that guide covers.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Keep both files from the builder in one folder</h3>
+      <p>The builder makes <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code>. Save them together (your Downloads folder is fine). Their names must differ only at the end: if your browser saved <code>… - Guide Supports (1).csv</code>, take the <code> (1)</code> off.</p>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Settings → Lesson activities → Import lesson CSV…, and pick the TEKS Alignment file</h3>
+      <p>Pick the <b>TEKS Alignment</b> file, not the Guide Supports file. The app finds the Guide Supports file beside it by itself. Under the activities, <b>Guide supports</b> lists what each level's guide has. Tick your periods and click <b>Import</b> (or <b>Replace "…"</b> for a lesson you already had: its ticks carry over and no saved day changes).</p>
+      <div class="fig" data-pens="397,225,345,20;287,446,232,27"><img class="shot" src="../images/n-gs-1.png" alt="Guide supports in the import preview"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Optional: Settings → Leveled guide supports → Supports to suggest</h3>
+      <p>Nothing here has to be set up: the app reads key phrases in each accommodation ("chunks", "reduced length of assignments", "sentence stems") to know which support covers it. Untick a support to stop its suggestions, or tick one of the four <i>(optional)</i> ones if your guides use it (for example fill-in-the-blank notes), then <b>Save supports</b>.</p>
+      <div class="fig" data-pens="789,343,118,22;115,428,74,27"><img class="shot" src="../images/n-gs-2.png" alt="Supports to suggest"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Optional: fix a wording the app matches wrong</h3>
+      <p>Only if you see a wrong dot, or a dot you expected is missing. Open <b>Wordings the app matched</b> (or <b>with no match</b>), change that wording's support or mark (<b>No</b> stops it), and click <b>Save</b>. The row says <i>your change</i>; <b>Use built-in match</b> puts it back.</p>
+      <div class="fig" data-pens="842,361,63,25;969,362,62,30"><img class="shot" src="../images/n-gs-3.png" alt="Fix a wording"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The preview lists <b>Guide supports</b> by level before you import.</li><li>The line after importing ends <code>Guide supports: 22 saved.</code></li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Picking the Guide Supports file in Import.</b> Pick the TEKS Alignment file; the supports come with it.</li><li><b>Files in different folders.</b> The app only looks beside the TEKS Alignment file.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>The first line must be exactly Lesson,Activity,TEKS,Percent,Expectation — this file's first line is Lesson,Level,Support</q>You picked the Guide Supports file. Import again and pick the TEKS Alignment file.<q>Guide supports: none…</q>The app found no Guide Supports file beside it. Check it's in the same folder and named exactly like the TEKS file, ending <code>- Guide Supports.csv</code>.<q>In "… - Guide Supports.csv": "…" isn't one of the guide support names</q>The builder misspelled a support on that line. Fix the line (or ask the builder to remake the file) and import again.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 // Every lesson on the site, in menu order. A lesson with no `url` shows as "coming soon".
+// `newIn` marks a lesson for a newer app version: it gets the NEW starburst wherever it's linked.
 // The menu, the Previous/Next buttons, and the "I did this" ticks all read this one list.
 window.LESSONS = [
   { group: 'Start here', id: 'backup', title: 'Back up to Drive', url: 'backup.html', minutes: 3 },
@@ -19,6 +20,8 @@ window.LESSONS = [
   { group: 'Goals', id: 'goalsetup', title: 'Set up goal tracking', url: 'goal-setup.html', minutes: 6 },
   { group: 'Goals', id: 'progress', title: 'Record goal progress', url: 'progress.html', minutes: 3 },
   { group: 'Goals', id: 'lessons', title: 'Import a lesson', url: 'import-lesson.html', minutes: 4 },
+  { group: 'Goals', id: 'guidesetup', title: 'Leveled guides: set up', url: 'guides-setup.html', minutes: 4, newIn: '0.4.18' },
+  { group: 'Goals', id: 'guideday', title: 'Leveled guides: log the day', url: 'guides-day.html', minutes: 3, newIn: '0.4.18' },
   { group: 'Keep it safe', id: 'restore', title: 'Restore a backup', url: 'restore.html', minutes: 4 },
   { group: 'Keep it safe', id: 'august', title: 'August year-end', url: 'august.html', minutes: 10 },
 ];
