@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Import a lesson · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="lessons">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Goals</div>
+      <h1>Import a <span>lesson</span></h1>
+      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Once per lesson</span><span class="fact">You need: the lesson's TEKS Alignment CSV</span></div>
+    </div>
+    <div class="why"><b>Why:</b> your lesson project makes a TEKS Alignment file for each lesson. Import it once, and on the period page you can pick an activity instead of typing the Activity and TEKS. Its codes raise goal alerts exactly as if you'd typed them.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Settings → Lesson activities → Import lesson CSV…</h3>
+      <p>Pick the lesson's <code>… - TEKS Alignment.csv</code>. A preview shows each activity (brackets removed from the names) and its codes in your short form (<code>113.41(d)(28)(A)</code> becomes <code>28A</code>).</p>
+      <div class="fig" data-pens="136,342,97,27;542,477,487,17"><img class="shot" src="../images/n-les-1.png" alt="The lesson preview"></div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Tick the periods that teach it, then Import</h3>
+      <p>Under <b>Show this lesson on</b>, tick at least one period. You can tick more later under Imported lessons.</p>
+      <div class="fig" data-pens="94,516,38,22;104,561,51,27"><img class="shot" src="../images/n-les-2.png" alt="Show this lesson on"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>On the period page: Lesson activity…</h3>
+      <p>Click <b>Lesson activity…</b>, then click the activity. Each shows the codes it fills in.</p>
+      <div class="fig" data-pens="511,242,84,27;542,391,293,35"><img class="shot" src="../images/n-les-3.png" alt="Picking an activity"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>The boxes fill in; check them and Save</h3>
+      <p>The activity is <b>added</b> to the Activity boxes and its codes to the TEKS box. Nothing is saved until you click <b>Save</b>.</p>
+      <div class="fig" data-pens="245,242,190,24;727,242,140,24;228,193,92,27"><img class="shot" src="../images/n-les-4.png" alt="Filled in"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li><code>Imported "The New Deal - Learn It": 3 activities, 13 codes. Shows on P1.</code></li><li>Picking fills the Activity and TEKS boxes.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>No period ticked.</b> Import is refused until one is.</li><li><b>Expecting it to replace what you typed.</b> It adds after a <code>;</code>.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Not imported: "…" has 2 problems. Nothing was saved.</q>Each problem is listed by line number. Fix the file and import again.<q>No lessons for Period … yet.</q>Tick that period for a lesson in Settings → Lesson activities.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

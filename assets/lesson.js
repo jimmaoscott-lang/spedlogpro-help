@@ -42,7 +42,7 @@
     const prev = p >= 0 ? `<a href="${lessons[p].url}"><small>← Previous</small><b>${lessons[p].title}</b></a>`
                         : `<a href="../"><small>← Back to</small><b>All lessons</b></a>`;
     const next = n < lessons.length ? `<a class="next" href="${lessons[n].url}"><small>Next →</small><b>${lessons[n].title}</b></a>`
-                                    : `<a class="next" href="../"><small>That's everything so far →</small><b>All lessons</b></a>`;
+                                    : `<a class="next" href="../"><small>You've reached the end →</small><b>All lessons</b></a>`;
     nav.innerHTML = prev + next;
   }
 

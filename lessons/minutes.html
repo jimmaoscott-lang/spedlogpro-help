@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Minutes report · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="minutes">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Paste &amp; report</div>
+      <h1>The <span>Minutes report</span></h1>
+      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Whenever you want to check</span><span class="fact">You need: some logged weeks</span></div>
+    </div>
+    <div class="why"><b>Why:</b> it shows, week by week, whether a student's minutes were met, with the reason for every adjustment written out in words, so you never have to work it out yourself.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Settings → Minutes report → Per student</h3>
+      <p>Click in <b>District ID</b> and pick the student from the list (type part of a name). Pick <b>From</b> and <b>To</b>, then <b>Compute</b>.</p>
+      <div class="fig" data-pens="235,248,115,26;371,286,91,27;505,286,59,27"><img class="shot" src="../images/n-min-1.png" alt="Minutes report, per student"></div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Read each week</h3>
+      <p>One card per school week, with a badge: <b>Compliant</b>, <b>Short by …</b>, or <b>Provisional — week not finished</b> while a day is still unlogged. The sentence underneath says why, and a table shows each day.</p>
+      <table class="codes"><tr><th>Each week</th><th>What it means</th></tr>
+        <tr><td><b>Required</b></td><td>The weekly IEP minutes, for the days the student was enrolled</td></tr>
+        <tr><td><b>Adjusted</b></td><td>Required, minus each <code>AB</code>, <code>O</code>, <code>S</code>, <code>SUB</code>, or <code>ARD</code> day. <code>SAB</code> and <code>FLEX</code> don't lower it.</td></tr>
+        <tr><td><b>Credited</b></td><td>The minutes printed in column B: spread over the days served, never more than the period's length in a day</td></tr>
+        <tr><td><b>Short</b></td><td>Credited is less than Adjusted</td></tr></table>
+      <div class="fig" data-pens="312,368,51,19;330,398,285,16"><img class="shot" src="../images/n-min-1.png" alt="A compliant week"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>A whole class at once: Per class (period)</h3>
+      <p>Pick the period and the range, then <b>Compute</b>: one table, one row per student per week. A short week is shaded, and <b>Notes</b> says why (here, two flex days that don't lower the minutes owed).</p>
+      <div class="fig" data-pens="237,219,85,19;137,249,42,27;525,596,40,34"><img class="shot" src="../images/n-min-2.png" alt="Minutes report, per class"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>A card per week (per student), or a table with a line saying how many students, weeks, and rows it listed (per class).</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Reading too much into a provisional week.</b> It changes as you log the rest of it.</li><li><b>SAB or FLEX for anything else.</b> They leave the minutes owed, so the week reads short.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>District ID, a start date, and an end date are all required.</q>Fill in the missing box and Compute again.<q>No in-session dates this week fall inside the student's enrollment window — nothing is owed.</q>A break week, or a week the student wasn't enrolled. Nothing to do.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

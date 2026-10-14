@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Restore a backup · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="restore">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Keep it safe</div>
+      <h1>Restore <span>a backup</span></h1>
+      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Only if something went wrong</span><span class="fact">You need: the backup to go back to</span></div>
+    </div>
+    <div class="why"><b>Why:</b> the app backs itself up every day you save. If something goes badly wrong, you can put the whole database back to a backup. It's whole-database or nothing: everything goes back to that moment.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Settings → Snapshots and restore → Choose snapshot to restore…</h3>
+      <p>Pick a backup from the list's folder (or a copy you downloaded from Google Drive). The Snapshot log shows when each was taken.</p>
+      <div class="fig" data-pens="169,440,130,27"><img class="shot" src="../images/n-rest-1.png" alt="Choose snapshot to restore"></div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Read what you'd lose</h3>
+      <p>It says how many sessions and codes were logged since that backup. Those are what a restore discards.</p>
+      <div class="fig" data-pens="542,505,487,27"><img class="shot" src="../images/n-rest-1.png" alt="What a restore discards"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Type RESTORE, click Restore this snapshot, and confirm</h3>
+      <p>The button only works once the word is typed. You'll be asked once more.</p>
+      <div class="fig" data-pens="676,554,356,26;156,592,102,27"><img class="shot" src="../images/n-rest-1.png" alt="Type RESTORE"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Afterwards</h3>
+      <p>Before it runs, the app writes a <b>rescue file</b> to your Desktop listing everything it discards, and takes a backup of what you had (so a restore can itself be undone). Then it reloads and shows the result.</p>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li><code>Restored from …. Discarded 2 sessions and 0 codes across 2 students. Rescue file: …</code></li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Restoring to fix one small thing.</b> It replaces everything; correct the one thing instead.</li><li><b>Skipping the rescue file.</b> Retype what it lists.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>This database was created by a newer version of the app …</q>The app on this computer is older than the one that made the database. Install the newest version, then open it again.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>
