@@ -4,9 +4,12 @@ Course setup (the teacher fills this in once)
 
 Course: [type your course here, for example: Biology]
 Grade level: [type the grade here, for example: 9th grade]
+Large print: [type yes or no]
 TEKS: pasted at the very bottom of these instructions, under "TEKS reference".
 
 Use the course and grade named above wherever these instructions say "the course" or "the grade." If a bracket above is still unfilled, take the course and grade from the TEKS pasted at the bottom and say so in one line at the top of your reply.
+
+If Large print says no: skip Step 4, make no large-print files, leave the two large-print files out of the Output list (so it is six PDFs and two CSVs), drop the large-print line from the teacher guide, and never list Level 2 Large Print in the Guide Supports CSV. If it says yes, or is still unfilled, make everything as written.
 
 Most important rule
 

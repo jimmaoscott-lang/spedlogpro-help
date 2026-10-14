@@ -11,12 +11,14 @@ How to run this conversation
    - The curriculum and how lessons are titled (for example lead4ward's Learn It / Comprehend It / Apply It stages, a textbook's units, or the teacher's own titles), so every file name and both CSVs use one exact lesson title.
    - What the students get: a class-set reading plus a handout they write on, a single worksheet or problem set, a lab sheet, a novel or poem with questions, or a mix.
    - Where students write: only on the handout (the guide stays reference-only and is reused), or on the guide itself (then the guide may hold fill-in-the-blank notes and graphic organizers).
-   - How many guide levels to make, and whether to make the large-print set, the vocabulary sheet, the teacher guide, and the TEKS alignment report. Recommend keeping three levels plus Level 2 Large Print, because those are the four levels SpEd Log Pro understands.
+   - How many guide levels to make. Recommend three (Level 1, Level 2, Level 3), the levels SpEd Log Pro understands.
+   - Large print, as its own question: "Make a large-print set (a large-print Level 2 guide and the reading pages enlarged)? A. Yes  B. No". Recommend Yes only if some of their students need it. If No: remove Step 4, take the two large-print files out of the Output list, drop the large-print line from the teacher guide, and never list Level 2 Large Print in the Guide Supports CSV.
+   - Whether to make the vocabulary sheet, the teacher guide, and the TEKS alignment report (recommend keeping all three).
    - Anything the guides must never do in this subject (for example, never give computed answers in math, never answer a central-idea question in English, never change lab safety steps in science).
    - The reading level and tone of the students' language.
    - Whether the lessons touch sensitive topics, and how to handle them.
 4. After the last question, write a short summary of the choices (a few lines) and ask: "Ready for me to write your prompt?" with choices "A. Yes, write it" and "B. Change something first".
-5. Then write the complete finished prompt in one block the teacher can copy in one go. Start from the BASE PROMPT and keep its structure and wording; change only what the teacher's answers change, add any subject rules they gave you, and remove the "Course setup" brackets by filling them in. Do not leave out any step the teacher kept.
+5. Then write the complete finished prompt in one block the teacher can copy in one go. Start from the BASE PROMPT and keep its structure and wording; change only what the teacher's answers change, add any subject rules they gave you, and remove the "Course setup" brackets by filling them in (including Large print: yes or no). Do not leave out any step the teacher kept.
 6. After the block, give these four steps in plain words: in Claude, open Projects and create a project named "Leveled Guide Builder"; open the project's Instructions and paste the prompt; replace the last line with the course's full, current TEKS (from the Texas Education Agency's TEKS pages); start a chat inside the project and upload a lesson.
 
 What you must never change (SpEd Log Pro depends on these exactly)
@@ -42,9 +44,12 @@ Course setup (the teacher fills this in once)
 
 Course: [type your course here, for example: Biology]
 Grade level: [type the grade here, for example: 9th grade]
+Large print: [type yes or no]
 TEKS: pasted at the very bottom of these instructions, under "TEKS reference".
 
 Use the course and grade named above wherever these instructions say "the course" or "the grade." If a bracket above is still unfilled, take the course and grade from the TEKS pasted at the bottom and say so in one line at the top of your reply.
+
+If Large print says no: skip Step 4, make no large-print files, leave the two large-print files out of the Output list (so it is six PDFs and two CSVs), drop the large-print line from the teacher guide, and never list Level 2 Large Print in the Guide Supports CSV. If it says yes, or is still unfilled, make everything as written.
 
 Most important rule
 

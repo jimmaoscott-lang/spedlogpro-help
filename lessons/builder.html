@@ -27,7 +27,7 @@
       <p>The prompt is the set of instructions that turns Claude into the Leveled Guide Builder. Pick one:</p>
       <div class="promptcard">
         <div class="pc-title">⚡ Quick: the ready-made prompt</div>
-        <div class="pc-sub">9 pages · any subject (math, English, science, social studies) · you fill in your course and grade and paste your TEKS</div>
+        <div class="pc-sub">9 pages · any subject (math, English, science, social studies) · you fill in your course, grade, and large print yes/no, and paste your TEKS</div>
         <div class="pc-btns">
           <button type="button" class="pc-copy" data-src="../assets/leveled-guide-builder-prompt.txt">📋 Copy the prompt</button>
           <a class="pc-link" href="../assets/leveled-guide-builder-prompt.pdf" target="_blank" rel="noopener">Open the PDF</a>
@@ -47,7 +47,7 @@
           <li>In Claude, start a <b>new chat</b> (an ordinary one, not inside a project).</li>
           <li>Paste the Prompt Maker, attach one <b>typical lesson or assignment</b> (no student names), and send.</li>
           <li>Answer its questions. Each one gives choices and marks the one it recommends; pick one or type your own.</li>
-          <li>When it writes your prompt, copy the whole block. That's the prompt you paste in step 3, with your course and grade already filled in. You still paste your TEKS (step 5).</li>
+          <li>When it writes your prompt, copy the whole block. That's the prompt you paste in step 3, with your course, grade, and large-print choice already filled in. You still paste your TEKS (step 5).</li>
         </ol>
       </div>
       <p><b>Copy</b> buttons copy the whole thing, clean. Copying out of the PDF can break the lines oddly; the PDF is for reading or printing.</p>
@@ -61,9 +61,10 @@
       <p>Inside the project, find <b>Instructions</b> (it may say <b>Set project instructions</b>) and click it. Paste the whole prompt and save. Project instructions apply to every chat you start in this project, so you do this once.</p>
     </div></div>
     <div class="step"><div class="num">4</div><div>
-      <h3>Fill in your course and grade</h3>
-      <p>At the top of what you pasted, under <b>Course setup</b>, replace the two brackets. (A Prompt Maker prompt has these filled in already: skip to step 5.)</p>
-      <p><code>Course: [type your course here, …]</code> → <code>Course: Biology</code><br><code>Grade level: [type the grade here, …]</code> → <code>Grade level: 9th grade</code></p>
+      <h3>Fill in your course, grade, and large print</h3>
+      <p>At the top of what you pasted, under <b>Course setup</b>, replace the three brackets. (A Prompt Maker prompt has these filled in already: skip to step 5.)</p>
+      <p><code>Course: [type your course here, …]</code> → <code>Course: Biology</code><br><code>Grade level: [type the grade here, …]</code> → <code>Grade level: 9th grade</code><br><code>Large print: [type yes or no]</code> → <code>Large print: no</code></p>
+      <p><b>Large print is optional.</b> Yes makes a large-print Level 2 guide and the reading pages enlarged. No skips both, and the Guide Supports file leaves out Level 2 Large Print; SpEd Log Pro simply never uses its <b>L2 LP</b> button.</p>
     </div></div>
     <div class="step"><div class="num">5</div><div>
       <h3>Paste your course's TEKS at the very bottom</h3>
@@ -71,12 +72,12 @@
     </div></div>
     <div class="step"><div class="num">6</div><div>
       <h3>Use it: upload a lesson</h3>
-      <p>Start a new chat <b>inside the project</b> and add the lesson document (drag it in, or use the paperclip or <b>+</b>). The builder starts right away and makes ten files: the three leveled guides, large print, vocabulary, a teacher guide, a TEKS report, and two CSVs. Download them all.</p>
+      <p>Start a new chat <b>inside the project</b> and add the lesson document (drag it in, or use the paperclip or <b>+</b>). The builder starts right away and makes ten files (eight without large print): the three leveled guides, large print if you chose it, vocabulary, a teacher guide, a TEKS report, and two CSVs. Download them all.</p>
       <p>Keep <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code> in the same folder, then follow <a href="guides-setup.html">Leveled guides: set up</a><span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span> to bring them into SpEd Log Pro.</p>
     </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The first reply lists the lesson title, the reading pages, the handout pages, and the key words, then the files follow.</li><li>Ten files, named with the lesson title, including <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code>.</li></ul></div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The first reply lists the lesson title, the reading pages, the handout pages, and the key words, then the files follow.</li><li>Ten files (eight without large print), named with the lesson title, including <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code>.</li></ul></div>
       <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Changing the support names in Step 8.</b> SpEd Log Pro refuses a Guide Supports file with any other name.</li><li><b>Uploading anything with student names.</b> The builder only needs the lesson.</li><li><b>Chatting outside the project.</b> A chat outside it doesn't have the instructions.</li></ul></div>
       <div class="box msg"><h4>⚠ If you see this</h4><q>It cites a TEKS code your course doesn't have</q>The TEKS at the bottom are missing or from another course. Paste your course's TEKS and try again.<q>Only some of the files</q>Ask: "Make the rest of the ten files." Or ask for one: "Just make the Guide Supports CSV for this lesson."</div>
     </div>
