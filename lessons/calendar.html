@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Load the calendar · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="calendar">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Start here · Stop 2 of 6</div>
+      <h1>Load this year’s <span>calendar</span></h1>
+      <div class="facts"><span class="fact">⏱ About 5 minutes</span><span class="fact">🔁 Once a year</span><span class="fact">You need: one service log workbook</span></div>
+      <div class="journey-mini"><i></i><i class="now"></i><i></i><i></i><i></i><i></i><span>Stop 2 of 6</span></div>
+    </div>
+    <div class="why"><b>Why:</b> the app builds its school calendar from a copy of a real service log: which days are school days, and which row each date sits on, so it can tell you exactly which cell to paste into. It only reads the dates; it never changes the real log.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Download a copy of one student’s service log</h3>
+      <p>In Google Sheets, open any student's service log workbook and choose <span class="path">File → Download → Microsoft Excel (.xlsx)</span>. Any student's will do: the dates are the same in all of them.</p>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Settings → Calendar ingest → Choose a service log file…</h3>
+      <p>Pick the <code>.xlsx</code> you just downloaded (it's in your <b>Downloads</b> folder).</p>
+      <div class="fig" data-pens="156,253,118,28"><img class="shot" src="../images/05-calendar-preview.png" alt="Calendar ingest"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Check the preview, then Confirm and save calendar</h3>
+      <p>It names the tab it read (ELA, Math, SS, or SC), how many dates (about 167), and the four nine-weeks with their first cells. A yellow note about a merged cell just means: watch that cell when you paste. Then click <b>Confirm and save calendar</b>.</p>
+      <div class="fig" data-pens="174,716,122,28"><img class="shot" src="../images/05-calendar-preview.png" alt="The calendar preview"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The line <code>Saved: 167 dates from the "ELA" tab.</code></li><li>The Entry tab shows the <b>School year</b>.</li><li>On a school day, the <b>not a school day</b> tag next to the date is gone.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>A workbook with no ELA, Math, SS, or SC tab.</b> The app reads the first of those it finds.</li><li><b>Typing over dates in the file.</b> Use the workbook as it is.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>ELA tab, row 88: 2026-11-14 is a Saturday. … Fix the file and upload again.</q>Something in the date column is off. Nothing was saved; fix that row in the workbook, download it again, and retry.<q>None of the expected tabs (ELA, Math, SS, SC) were found.</q>Download a real service log workbook, not a different sheet.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this stop off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

@@ -166,7 +166,7 @@
 <header class="top">
   <a class="logo" href="./"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
   <nav><a href="#start">Start here</a><a href="#tasks">All tasks</a><a href="#tour">60-second tour</a></nav>
-  <a class="pill-cta" href="lessons/roster.html">Start the course →</a>
+  <a class="pill-cta" href="lessons/backup.html">Start the course →</a>
 </header>
 
 <div class="hero">
@@ -177,7 +177,7 @@
       <p class="lede">Short, picture-by-picture lessons for every job in SpEd Log Pro, with the exact spot to click
          circled in red. Start with setup, or jump straight to what you need today.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="lessons/roster.html">▶ Start here: your roster</a>
+        <a class="btn btn-primary" href="lessons/backup.html">▶ Start here: first-day setup</a>
         <a class="btn btn-ghost" href="#tour">Watch the 60-second tour</a>
       </div>
       <div class="search">
@@ -222,12 +222,12 @@
   <p class="sub">Click a stop and follow along in your own copy of the app. Each one takes about five minutes,
      and this page remembers which stops you've finished, in your own browser only.</p>
   <div class="journey">
-    <a class="stop soon" href="#"><div class="badge">1</div><b>Back up</b><span>Your first Drive copy</span></a>
-    <a class="stop soon" href="#"><div class="badge">2</div><b>Calendar</b><span>Load the school year</span></a>
-    <a class="stop soon" href="#"><div class="badge">3</div><b>Bell schedule</b><span>Your real period times</span></a>
+    <a class="stop" href="lessons/backup.html"><div class="badge">1</div><b>Back up</b><span>Your first Drive copy</span></a>
+    <a class="stop" href="lessons/calendar.html"><div class="badge">2</div><b>Calendar</b><span>Load the school year</span></a>
+    <a class="stop" href="lessons/bells.html"><div class="badge">3</div><b>Bell schedule</b><span>Your real period times</span></a>
     <a class="stop" href="lessons/roster.html"><div class="badge">4</div><b>Roster</b><span>Drop in your CSV</span></a>
-    <a class="stop soon" href="#"><div class="badge">5</div><b>Students</b><span>Add your caseload</span></a>
-    <a class="stop soon" href="#"><div class="badge">6</div><b>First day</b><span>Log it and Save</span></a>
+    <a class="stop" href="lessons/add-students.html"><div class="badge">5</div><b>Students</b><span>Add your caseload</span></a>
+    <a class="stop" href="lessons/first-day.html"><div class="badge">6</div><b>First day</b><span>Log it and Save</span></a>
   </div>
 </section>
 
@@ -300,14 +300,15 @@
 
   // Search: instant results as you type.
   const lessons = [
+    ['Back up to Drive', 'Start here', 'backup drive desktop weekly panel', 'lessons/backup.html'], ['Load the calendar', 'Start here', 'calendar dates school year xlsx', 'lessons/calendar.html'], ['Set the bell schedule', 'Start here', 'bell schedule period times length', 'lessons/bells.html'], ['Add your students', 'Start here', 'add student roster new', 'lessons/add-students.html'], ['Log your first day', 'Start here', 'log day save activity chips accommodations absent', 'lessons/first-day.html'], 
     ['Log a day', 'Every day', 'activity save chips accommodations'], ['Absences & whole-class codes', 'Every day', 'absent AB SAB FLEX sub code'],
     ['Catch up on missed days', 'Every day', 'unresolved missed late'], ['Paste a week into the service log', 'Paste & report', 'paste copy service log block'],
     ['Minutes report', 'Paste & report', 'minutes compliance short'], ['Accommodations report', 'Paste & report', 'declined accommodations'],
-    ['Your roster: make it, download it, drop it in', 'Start here', 'roster csv sheet download folder columns headings', 'lessons/roster.html'], ['Add a student', 'Students', 'add new'], ['A student in two classes', 'Students', 'two classes co-teach suffix period'],
+    ['Your roster: make it, download it, drop it in', 'Start here', 'roster csv sheet download folder columns headings', 'lessons/roster.html'], ['A student in two classes', 'Students', 'two classes co-teach suffix period'],
     ['Student leaves or comes back', 'Students', 'remove restore archive move period'], ['Set up goal tracking', 'Goals', 'goal TEKS mastery checklist rubric'],
     ['Record goal progress', 'Goals', 'alert flag progress trials'], ['Import a lesson', 'Goals', 'lesson csv TEKS activity'],
     ['Enter an ARD change', 'When the IEP changes', 'ARD minutes service type paste sheets'], ['Edit accommodations', 'When the IEP changes', 'accommodations remove add'],
-    ['Weekly Drive backup', 'Keep it safe', 'backup drive desktop'], ['August year-end', 'Keep it safe', 'year clear august new year calendar'],
+    ['August year-end', 'Keep it safe', 'year clear august new year calendar'],
   ];
   const q = document.getElementById('q'), res = document.getElementById('results');
   function search(v) {
