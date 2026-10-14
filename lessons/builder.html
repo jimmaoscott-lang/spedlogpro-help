@@ -23,19 +23,34 @@
     </div>
     <div class="why"><b>Why:</b> the Leveled Guide Builder is a Claude project that turns one lesson into three leveled guides, a large-print set, a vocabulary sheet, a teacher guide, and a TEKS report, plus the two files SpEd Log Pro imports so it can fill in the TEKS and suggest each student's accommodations.</div>
     <div class="step"><div class="num">1</div><div>
-      <h3>Get the prompt</h3>
-      <p>This is the set of instructions that turns Claude into the Leveled Guide Builder. It works for any subject: you fill in your course and grade, and paste your course's TEKS at the end.</p>
+      <h3>Get a prompt: quick, or made for your class</h3>
+      <p>The prompt is the set of instructions that turns Claude into the Leveled Guide Builder. Pick one:</p>
       <div class="promptcard">
-        <div class="pc-title">📄 Leveled Guide Builder prompt</div>
-        <div class="pc-sub">8 pages · any subject · makes the ten files, including the two CSVs SpEd Log Pro imports</div>
+        <div class="pc-title">⚡ Quick: the ready-made prompt</div>
+        <div class="pc-sub">9 pages · any subject (math, English, science, social studies) · you fill in your course and grade and paste your TEKS</div>
         <div class="pc-btns">
-          <button type="button" class="pc-copy" id="copy-prompt">📋 Copy the prompt</button>
+          <button type="button" class="pc-copy" data-src="../assets/leveled-guide-builder-prompt.txt">📋 Copy the prompt</button>
           <a class="pc-link" href="../assets/leveled-guide-builder-prompt.pdf" target="_blank" rel="noopener">Open the PDF</a>
           <a class="pc-link" href="../assets/leveled-guide-builder-prompt.txt" download>Download as text</a>
         </div>
-        <div class="pc-msg" id="copy-msg" role="status"></div>
+        <div class="pc-msg" role="status"></div>
       </div>
-      <p><b>Copy the prompt</b> is the easy way: it copies the whole thing, clean. Copying out of the PDF can break the lines oddly; the PDF is for reading or printing.</p>
+      <div class="promptcard maker">
+        <div class="pc-title">🛠 Custom: the Prompt Maker</div>
+        <div class="pc-sub">About 10 minutes · Claude asks you questions with choices, then writes a prompt fitted to your subject, curriculum, and lessons</div>
+        <div class="pc-btns">
+          <button type="button" class="pc-copy" data-src="../assets/leveled-guide-prompt-maker.txt">📋 Copy the Prompt Maker</button>
+          <a class="pc-link" href="../assets/leveled-guide-prompt-maker.txt" download>Download as text</a>
+        </div>
+        <div class="pc-msg" role="status"></div>
+        <ol class="pc-steps">
+          <li>In Claude, start a <b>new chat</b> (an ordinary one, not inside a project).</li>
+          <li>Paste the Prompt Maker, attach one <b>typical lesson or assignment</b> (no student names), and send.</li>
+          <li>Answer its questions. Each one gives choices and marks the one it recommends; pick one or type your own.</li>
+          <li>When it writes your prompt, copy the whole block. That's the prompt you paste in step 3, with your course and grade already filled in. You still paste your TEKS (step 5).</li>
+        </ol>
+      </div>
+      <p><b>Copy</b> buttons copy the whole thing, clean. Copying out of the PDF can break the lines oddly; the PDF is for reading or printing.</p>
     </div></div>
     <div class="step"><div class="num">2</div><div>
       <h3>In Claude, make a new project</h3>
@@ -47,7 +62,7 @@
     </div></div>
     <div class="step"><div class="num">4</div><div>
       <h3>Fill in your course and grade</h3>
-      <p>At the top of what you pasted, under <b>Course setup</b>, replace the two brackets:</p>
+      <p>At the top of what you pasted, under <b>Course setup</b>, replace the two brackets. (A Prompt Maker prompt has these filled in already: skip to step 5.)</p>
       <p><code>Course: [type your course here, …]</code> → <code>Course: Biology</code><br><code>Grade level: [type the grade here, …]</code> → <code>Grade level: 9th grade</code></p>
     </div></div>
     <div class="step"><div class="num">5</div><div>
@@ -72,10 +87,9 @@
 <script src="../assets/lessons.js"></script>
 <script src="../assets/lesson.js"></script>
 <script>
-  // Copy the whole prompt, as plain text, in one click. The text is loaded ahead so the click
-  // can copy straight away, through a hidden text box (works in every browser), or the clipboard API.
-  let promptText = null;
-  fetch('../assets/leveled-guide-builder-prompt.txt').then((r) => r.text()).then((t) => { promptText = t; }).catch(() => {});
+  // Copy buttons: each copies its text file, clean, in one click. The texts are loaded ahead so the
+  // click can copy straight away, through a hidden text box (works in every browser), or the
+  // clipboard API.
   function fallbackCopy(text) {
     const ta = document.createElement('textarea');
     ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
@@ -83,15 +97,19 @@
     let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
     ta.remove(); return ok;
   }
-  document.getElementById('copy-prompt').addEventListener('click', () => {
-    const msg = document.getElementById('copy-msg');
-    const done = () => { msg.textContent = 'Copied. Paste it into the project’s instructions.'; };
-    const fail = () => { msg.textContent = 'Couldn’t copy here. Use "Download as text", open it, and copy from there.'; };
-    if (!promptText) { fail(); return; }
-    if (fallbackCopy(promptText)) { done(); return; }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(promptText).then(done, fail);
-    else fail();
-  });
+  for (const btn of document.querySelectorAll('.pc-copy')) {
+    let text = null;
+    fetch(btn.dataset.src).then((r) => r.text()).then((t) => { text = t; }).catch(() => {});
+    btn.addEventListener('click', () => {
+      const msg = btn.closest('.promptcard').querySelector('.pc-msg');
+      const done = () => { msg.textContent = 'Copied. Now paste it where the steps say.'; };
+      const fail = () => { msg.textContent = 'Couldn’t copy here. Use "Download as text", open it, and copy from there.'; };
+      if (!text) { fail(); return; }
+      if (fallbackCopy(text)) { done(); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+      else fail();
+    });
+  }
 </script>
 </body>
 </html>

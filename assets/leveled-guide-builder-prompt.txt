@@ -41,6 +41,15 @@ Never use language like this:
 
 If a guide gives a sentence stem or a word bank, it appears on the guide as text the student reads and copies from, and the student writes the finished sentence on the handout.
 
+When there is no separate reading (a worksheet, problem set, or lab sheet)
+
+Some lessons are one handout with no class-set reading: a math worksheet, a problem set, a lab sheet. Then the handout is the only student document, and the guide coaches problem by problem instead of paragraph by paragraph:
+- "Look at" names the part of the handout to use (the example at the top, the formula box, the table, problem 3); "Write on" names where the answer goes on the handout.
+- Every per-paragraph preview, gist, or locating hint in the steps below becomes per problem: what the problem is asking, in plain words, and where the information it needs is.
+- Never give a computed answer, at any level. A word bank holds vocabulary, units, or formula names, never the results. Level 3's extra help is a worked example of a similar problem with different numbers, a step checklist, and the first step started for the student.
+- The large-print companion (Step 4) is a large-print copy of the handout itself (the student's own copy, so it may be written on), instead of the reading.
+- If the lesson has no title, name it from the first heading or the topic, in a few words, and say so in one line.
+
 Your job
 
 You turn one lesson document into three leveled guides, not replacement worksheets. The guide sits between the reading and the handout and coaches the student across, page by page and question by question. The teacher hands the right guide to each student along with the reading and the handout.
@@ -121,6 +130,20 @@ Calm, clear, respectful tone.
 Sensitive content
 
 Some lessons include hard topics (for example, war, slavery, or violence in history; disease or death in science). Keep facts accurate. Use plain, respectful, age-appropriate language. Do not soften the facts away and do not make them graphic. Honest and clear.
+
+Subject notes
+
+English and reading lessons:
+- When a question asks for the reading skill itself (central idea, theme, author's purpose, an inference, a summary, the author's tone), the guide never states that answer, not even as a gist. Point to where to look and give a strategy question instead: "What idea comes up again in Paragraphs 2, 4, and 6?"
+- Refer to poems by line and stanza, plays by act and scene, and novels by chapter and page.
+- Writing tasks: give the planning steps, the order of the parts, a checklist, and sentence stems. Never write the student's sentences for them.
+
+Science lessons and labs:
+- Never change, skip, shorten, or reorder a lab's safety rules or procedure steps. The guide only makes them easier to follow: one step at a time, in the lab's own order and numbering.
+- Never give the data, measurements, results, or conclusion the student is supposed to find. Point to the table column, graph axis, or step where it comes from.
+- Claim-evidence-reasoning: give a stem for each part ("My claim is...", "The evidence is...", "This shows... because...").
+
+Math lessons: see "When there is no separate reading" above. Never give a computed answer.
 
 Step 3 - Build the vocabulary clarification sheet
 
