@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Absences & whole-class codes · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="absences">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Every day</div>
+      <h1>Absences &amp; <span>whole-class codes</span></h1>
+      <div class="facts"><span class="fact">⏱ About 3 minutes</span><span class="fact">🔁 Whenever someone is out</span><span class="fact">You need: your students added</span></div>
+    </div>
+    <div class="why"><b>Why:</b> every school day in the service log needs either minutes or a reason code. A code tells the log why there was no service, and decides whether that day's minutes are still owed.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>One student out: pick the reason in Absence</h3>
+      <p><code>AB</code> student absent · <code>O</code> field trip, assembly, or school function · <code>S</code> state assessment. The card's badge changes from PRESENT to the code. Their accommodations and activity aren't needed.</p>
+      <div class="fig" data-pens="828,677,197,27;721,375,30,20"><img class="shot" src="../images/n-abs-1.png" alt="Marking a student absent"></div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Whole class out: switch on Whole-class code and pick one</h3>
+      <p>Use this when nobody in the class got service for the same reason. Every card takes the code, replacing any <code>AB</code> or <code>O</code> already picked.</p>
+      <table class="codes"><tr><th>Code</th><th>Means</th><th>Lowers the minutes owed?</th></tr>
+        <tr><td><code>SAB</code></td><td>Staff absent</td><td><b>No</b>: the week may read short</td></tr>
+        <tr><td><code>SUB</code></td><td>Staff pulled to sub</td><td>Yes</td></tr>
+        <tr><td><code>ARD</code></td><td>Staff at an ARD meeting</td><td>Yes</td></tr>
+        <tr><td><code>FLEX</code></td><td>Staff flex day</td><td><b>No</b>: the week may read short</td></tr>
+        <tr><td><code>S</code></td><td>State assessment</td><td>Yes</td></tr></table>
+      <div class="fig" data-pens="402,193,92,20;656,193,172,27"><img class="shot" src="../images/n-abs-2.png" alt="Whole-class code"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Same code in other periods? Tick them</h3>
+      <p>Under <b>Also apply to:</b>, tick each other period that had the same day (a flex day usually covers several). A period with nobody in it says <i>no students</i> and can't be ticked. Ticks are never remembered for the next day.</p>
+      <div class="fig" data-pens="201,413,30,16"><img class="shot" src="../images/n-abs-2.png" alt="Also apply to other periods"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Click Save, check the summary, and Save again</h3>
+      <p>Because those periods aren't on screen, the app first says exactly what it will do in each one. Nothing is written until you confirm.</p>
+      <div class="fig" data-pens="725,482,43,27"><img class="shot" src="../images/n-abs-3.png" alt="What will happen in the other periods"></div>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Read the line it gives you</h3>
+      <p>One line per period it saved.</p>
+      <div class="fig" data-pens="245,426,215,28"><img class="shot" src="../images/n-abs-4.png" alt="The save report"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The card badges show the code.</li><li>A line per period, like <code>Saved 1 student for period 2, 2026-10-20. 1 marked absent.</code></li><li>Those days drop off the Entry tab's <b>Unresolved dates</b>.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>SAB and FLEX for anything else.</b> They keep the minutes owed, so use them only when it was really you out.</li><li><b>Expecting it to undo itself.</b> To take a whole-class code off, open that period on that date, switch it off, fill in the day, and Save.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Coding these students will remove their already-logged sessions …</q>That day was already saved as present. <b>Remove sessions and save</b> replaces it with the code; <b>Cancel</b> leaves it.<q>Choose a whole-class code before saving other periods.</q>Other periods are ticked but no code is picked. Pick one, then Save.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

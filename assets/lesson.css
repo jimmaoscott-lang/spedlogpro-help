@@ -122,3 +122,6 @@
   .soonlink { opacity:.55; pointer-events:none; }
   aside a .soon { font-size:11px; color:var(--muted); margin-left:auto; }
   @media (max-width: 600px) { .top .mini-search { min-width: 0; font-size: 0; padding: 7px 10px; } .top .mini-search::first-letter { font-size: 16px; } }
+  table.codes { border-collapse:collapse; margin:4px 0 10px; font-size:14.5px; }
+  table.codes th, table.codes td { border:1px solid var(--line); padding:5px 10px; text-align:left; background:#fff; }
+  table.codes th { background:#efe8da; }
