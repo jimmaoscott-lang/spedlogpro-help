@@ -204,6 +204,7 @@ Follow these format rules exactly:
 - Then one row for each expectation in each section, in handout order: the same rows as the report's section-by-section tables.
 - Lesson: the lesson title from Step 1, exactly the same on every row.
 - Activity: the section's handout title or label, exactly as it is written in the report.
+- Every Activity must still be different from every other Activity after anything in brackets ( ) is removed, because the logging app drops bracketed text from activity names. If two sections share a handout title, put the difference outside the brackets, in both the report and the CSV: "Solve the equation: Problems 1-9" and "Solve the equation: Problems 13-18", not "Solve the equation. (Problems 1-9)" and "Solve the equation. (Problems 13-18)".
 - TEKS: the exact code from the TEKS reference text. Never invent a code.
 - Percent: a whole number with no percent sign, for example 40. A section's percentages add up to 100.
 - Expectation: the short wording used in the report.
