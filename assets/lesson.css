@@ -126,3 +126,4 @@
   table.codes th, table.codes td { border:1px solid var(--line); padding:5px 10px; text-align:left; background:#fff; }
   table.codes th { background:#efe8da; }
   table.codes mark { background:#ffe58a; padding:0 2px; border-radius:2px; }
+  p.notice { margin:34px 0 0; font-size:12.5px; color:var(--muted); text-align:center; }

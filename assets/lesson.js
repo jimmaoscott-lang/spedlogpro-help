@@ -46,6 +46,15 @@
     nav.innerHTML = prev + next;
   }
 
+  // ---- copyright notice at the foot of every lesson ----
+  const main = document.querySelector('main');
+  if (main) {
+    const f = document.createElement('p');
+    f.className = 'notice';
+    f.textContent = '© 2026 J. Scott. All rights reserved. All students shown are made up.';
+    main.appendChild(f);
+  }
+
   // ---- "I did this" ----
   const did = document.getElementById('did');
   if (did && here) {
