@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A student in two classes · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="twoclasses">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Students</div>
+      <h1>A student in <span>two of your classes</span></h1>
+      <div class="facts"><span class="fact">⏱ About 5 minutes</span><span class="fact">🔁 Once per student</span><span class="fact">You need: your roster Sheet</span></div>
+    </div>
+    <div class="why"><b>Why:</b> the app keeps one record per student, in one period. When a student needs a <b>separate service log for each class</b> (your Government class in P3 and your US History class in P4, each with its own minutes), you give them one roster row per class, with a class code on the end of both the ID and the name. For anyone else, add them once, the normal way.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>In your Sheet, make one row per class</h3>
+      <p>Copy the student's row so there are two. On each, add the <b>same class code</b> to the end of the <b>Student ID</b> (a hyphen, then letters, or letters and numbers) and, in brackets, to the end of the <b>name</b>. Give each row that class's minutes, accommodations, and goal. Capitals don't matter; spelling does.</p>
+      <table class="codes"><tr><th>Student ID</th><th>Name: Last, First</th><th>min per week</th><th>…</th></tr>
+        <tr><td>0071555<mark>-GOV</mark></td><td>Teapot, Tester <mark>(GOV)</mark></td><td>90</td><td>…</td></tr>
+        <tr><td>0071555<mark>-USH</mark></td><td>Teapot, Tester <mark>(USH)</mark></td><td>120</td><td>…</td></tr></table>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Download the roster into the Roster folder</h3>
+      <p><span class="path">File → Download → Comma Separated Values</span>, then replace the old CSV in <code>C:\SpEd Log Pro Roster</code> (see <a href="roster.html">Your roster</a>).</p>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>On the first class’s tab, type the shared number and pick that class’s row</h3>
+      <p>Here on <b>P3</b>: type <code>0071555</code> in <b>District ID or name</b>. Both rows drop down. Pick <b>-GOV</b>.</p>
+      <div class="fig" data-pens="169,290,115,27;195,330,139,22"><img class="shot" src="../images/n-tc-1.png" alt="Both class rows listed"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Check the start date and Confirm add</h3>
+      <p>The line names the row and the period. Then go to the other class's tab (here <b>P4</b>) and do steps 3 and 4 again, picking <b>-USH</b>.</p>
+      <div class="fig" data-pens="251,417,91,27;124,456,71,27"><img class="shot" src="../images/n-tc-2.png" alt="Confirming the GOV row"></div>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Each class is now its own student</h3>
+      <p>Its own card, minutes, accommodations, goal, and <b>Service log</b>. Paste each one's service log into that class's tab of the real log. The pasted text never includes the ID, so the log itself is unaffected.</p>
+      <div class="fig" data-pens="151,396,93,19;122,443,62,17;244,443,49,16"><img class="shot" src="../images/n-tc-4.png" alt="The GOV record on P3"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>A card on each tab: <b>Teapot, Tester (GOV)</b> on P3, <b>Teapot, Tester (USH)</b> on P4.</li><li>Each has its own minutes.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Changing only the name.</b> The app tells students apart by ID, so the code goes on both.</li><li><b>Already in the app as plain 0071555?</b> Add the two new rows, then remove the old record with its gear button (see <a href="leaves.html">Leaves or comes back</a>).</li><li><b>The cost:</b> ARD changes, missed days, removals, and the August re-add happen once per record.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Not added: the Student ID "0071556-USH" ends in USH but the name "Kettle, Kim (GOV)" ends in (GOV). Make them match in the Sheet.</q>The two codes differ. Fix the row in your Sheet, download the CSV again, and add it again.<div class="fig" data-pens="460,340,418,17" style="margin-top:8px"><img class="shot" src="../images/n-tc-3.png" alt="The refusal"></div></div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>
