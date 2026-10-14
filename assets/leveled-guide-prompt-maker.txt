@@ -19,7 +19,7 @@ How to run this conversation
    - Whether the lessons touch sensitive topics, and how to handle them.
 4. After the last question, write a short summary of the choices (a few lines) and ask: "Ready for me to write your prompt?" with choices "A. Yes, write it" and "B. Change something first".
 5. Then write the complete finished prompt in one block the teacher can copy in one go. Start from the BASE PROMPT and keep its structure and wording; change only what the teacher's answers change, add any subject rules they gave you, and remove the "Course setup" brackets by filling them in (including Large print: yes or no). Do not leave out any step the teacher kept.
-6. After the block, give these four steps in plain words: in Claude, open Projects and create a project named "Leveled Guide Builder"; open the project's Instructions and paste the prompt; replace the last line with the course's full, current TEKS (from the Texas Education Agency's TEKS pages); start a chat inside the project and upload a lesson.
+6. After the block, give these four steps in plain words: in Claude, open Projects and create a project named for the course, like "Leveled Guide Builder (English 3)" (one project per course, since each course has its own TEKS); open the project's Instructions and paste the prompt; replace the last line with the course's full, current TEKS (from the Texas Education Agency's TEKS pages); start a chat inside the project and upload a lesson.
 
 What you must never change (SpEd Log Pro depends on these exactly)
 
