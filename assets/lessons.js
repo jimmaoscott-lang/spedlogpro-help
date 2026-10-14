@@ -20,6 +20,7 @@ window.LESSONS = [
   { group: 'Goals', id: 'goalsetup', title: 'Set up goal tracking', url: 'goal-setup.html', minutes: 6 },
   { group: 'Goals', id: 'progress', title: 'Record goal progress', url: 'progress.html', minutes: 3 },
   { group: 'Goals', id: 'lessons', title: 'Import a lesson', url: 'import-lesson.html', minutes: 4 },
+  { group: 'Goals', id: 'builder', title: 'Set up the Leveled Guide Builder', url: 'builder.html', minutes: 10, newIn: '0.4.18' },
   { group: 'Goals', id: 'guidesetup', title: 'Leveled guides: set up', url: 'guides-setup.html', minutes: 4, newIn: '0.4.18' },
   { group: 'Goals', id: 'guideday', title: 'Leveled guides: log the day', url: 'guides-day.html', minutes: 3, newIn: '0.4.18' },
   { group: 'Keep it safe', id: 'restore', title: 'Restore a backup', url: 'restore.html', minutes: 4 },

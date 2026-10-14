@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Set up the Leveled Guide Builder · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body data-lesson="builder">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Goals <span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span></div>
+      <h1>Set up the <span>Leveled Guide Builder</span></h1>
+      <div class="facts"><span class="fact">⏱ About 10 minutes</span><span class="fact">🔁 Once</span><span class="fact">You need: a Claude account and your course's TEKS</span></div>
+    </div>
+    <div class="why"><b>Why:</b> the Leveled Guide Builder is a Claude project that turns one lesson into three leveled guides, a large-print set, a vocabulary sheet, a teacher guide, and a TEKS report, plus the two files SpEd Log Pro imports so it can fill in the TEKS and suggest each student's accommodations.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Get the prompt</h3>
+      <p>This is the set of instructions that turns Claude into the Leveled Guide Builder. It works for any subject: you fill in your course and grade, and paste your course's TEKS at the end.</p>
+      <div class="promptcard">
+        <div class="pc-title">📄 Leveled Guide Builder prompt</div>
+        <div class="pc-sub">8 pages · any subject · makes the ten files, including the two CSVs SpEd Log Pro imports</div>
+        <div class="pc-btns">
+          <button type="button" class="pc-copy" id="copy-prompt">📋 Copy the prompt</button>
+          <a class="pc-link" href="../assets/leveled-guide-builder-prompt.pdf" target="_blank" rel="noopener">Open the PDF</a>
+          <a class="pc-link" href="../assets/leveled-guide-builder-prompt.txt" download>Download as text</a>
+        </div>
+        <div class="pc-msg" id="copy-msg" role="status"></div>
+      </div>
+      <p><b>Copy the prompt</b> is the easy way: it copies the whole thing, clean. Copying out of the PDF can break the lines oddly; the PDF is for reading or printing.</p>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>In Claude, make a new project</h3>
+      <p>Go to <b>claude.ai</b> and sign in. Click <b>Projects</b> in the left sidebar, then <b>Create project</b> (it may say <b>New project</b>). Name it <code>Leveled Guide Builder</code> and create it.</p>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Paste the prompt into the project's instructions</h3>
+      <p>Inside the project, find <b>Instructions</b> (it may say <b>Set project instructions</b>) and click it. Paste the whole prompt and save. Project instructions apply to every chat you start in this project, so you do this once.</p>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Fill in your course and grade</h3>
+      <p>At the top of what you pasted, under <b>Course setup</b>, replace the two brackets:</p>
+      <p><code>Course: [type your course here, …]</code> → <code>Course: Biology</code><br><code>Grade level: [type the grade here, …]</code> → <code>Grade level: 9th grade</code></p>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Paste your course's TEKS at the very bottom</h3>
+      <p>The last line says <code>[Paste the complete, current TEKS for your course here …]</code>. Replace that line with your course's TEKS: the course introduction and every knowledge-and-skills statement with its student expectations. You'll find them on the Texas Education Agency's TEKS pages (Texas Administrative Code, Chapters 110 to 130). The builder cites codes only from what you paste here, so paste the whole course, and update it when the TEKS change. Save the instructions.</p>
+    </div></div>
+    <div class="step"><div class="num">6</div><div>
+      <h3>Use it: upload a lesson</h3>
+      <p>Start a new chat <b>inside the project</b> and add the lesson document (drag it in, or use the paperclip or <b>+</b>). The builder starts right away and makes ten files: the three leveled guides, large print, vocabulary, a teacher guide, a TEKS report, and two CSVs. Download them all.</p>
+      <p>Keep <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code> in the same folder, then follow <a href="guides-setup.html">Leveled guides: set up</a><span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span> to bring them into SpEd Log Pro.</p>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The first reply lists the lesson title, the reading pages, the handout pages, and the key words, then the files follow.</li><li>Ten files, named with the lesson title, including <code>… - TEKS Alignment.csv</code> and <code>… - Guide Supports.csv</code>.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Changing the support names in Step 8.</b> SpEd Log Pro refuses a Guide Supports file with any other name.</li><li><b>Uploading anything with student names.</b> The builder only needs the lesson.</li><li><b>Chatting outside the project.</b> A chat outside it doesn't have the instructions.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>It cites a TEKS code your course doesn't have</q>The TEKS at the bottom are missing or from another course. Paste your course's TEKS and try again.<q>Only some of the files</q>Ask: "Make the rest of the ten files." Or ask for one: "Just make the Guide Supports CSV for this lesson."</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+  // Copy the whole prompt, as plain text, in one click. The text is loaded ahead so the click
+  // can copy straight away, through a hidden text box (works in every browser), or the clipboard API.
+  let promptText = null;
+  fetch('../assets/leveled-guide-builder-prompt.txt').then((r) => r.text()).then((t) => { promptText = t; }).catch(() => {});
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove(); return ok;
+  }
+  document.getElementById('copy-prompt').addEventListener('click', () => {
+    const msg = document.getElementById('copy-msg');
+    const done = () => { msg.textContent = 'Copied. Paste it into the project’s instructions.'; };
+    const fail = () => { msg.textContent = 'Couldn’t copy here. Use "Download as text", open it, and copy from there.'; };
+    if (!promptText) { fail(); return; }
+    if (fallbackCopy(promptText)) { done(); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(promptText).then(done, fail);
+    else fail();
+  });
+</script>
+</body>
+</html>
