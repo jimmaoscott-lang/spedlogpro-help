@@ -66,8 +66,10 @@
       try { localStorage.setItem('done:' + here, did.checked ? '1' : '0'); } catch (e) {}
       const t = document.querySelector('#menu a.here .tick');
       if (t) { t.className = did.checked ? 'tick ok' : 'tick'; if (did.checked) t.textContent = '✓'; }
+      if (window.refreshNewBadges) window.refreshNewBadges(here);
     });
   }
+  if (window.refreshNewBadges) window.refreshNewBadges(here);
 
   // ---- red pen loops ----
   // Drawn figures: items marked data-pen get a loop (items sharing a value share one loop).

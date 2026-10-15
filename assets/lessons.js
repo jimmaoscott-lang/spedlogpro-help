@@ -27,3 +27,23 @@ window.LESSONS = [
   { group: 'Keep it safe', id: 'restore', title: 'Restore a backup', url: 'restore.html', minutes: 4 },
   { group: 'Keep it safe', id: 'august', title: 'August year-end', url: 'august.html', minutes: 10 },
 ];
+
+// NEW badges disappear, in this browser, once their lesson is ticked "I did this" (and come back
+// if it's unticked). A badge belongs to the link it sits in or right after; on a lesson page the
+// badge at the top belongs to that lesson.
+window.refreshNewBadges = function (currentId) {
+  const lessons = window.LESSONS || [];
+  const isDone = (id) => { try { return localStorage.getItem('done:' + id) === '1'; } catch (e) { return false; } };
+  const idFor = (b) => {
+    if (b.closest('.crumbs')) return currentId || null;
+    const a = b.closest('a') || (b.previousElementSibling && b.previousElementSibling.tagName === 'A' ? b.previousElementSibling : null);
+    if (!a) return null;
+    const file = (a.getAttribute('href') || '').split('?')[0].split('#')[0].split('/').pop();
+    const l = lessons.find((x) => x.url === file);
+    return l ? l.id : null;
+  };
+  for (const b of document.querySelectorAll('.newburst')) {
+    const id = idFor(b);
+    b.hidden = !!id && isDone(id);
+  }
+};

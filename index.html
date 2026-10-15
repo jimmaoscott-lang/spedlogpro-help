@@ -171,6 +171,7 @@
   transform: rotate(-12deg); }
 .newburst small { font-size:11px; font-weight:600; color:#b45309; }
 .tile li > span { display:inline-flex; align-items:center; flex-wrap:wrap; }
+.newburst[hidden] { display: none !important; }
 </style>
 </head>
 <body>
@@ -282,6 +283,7 @@
   <span>Questions? Ask the person who sent you this link.</span>
 </div></footer>
 
+<script src="assets/lessons.js"></script>
 <script>
   // 60-second tour: each frame shows a real screenshot with the click circled in red.
   const frames = [
@@ -330,9 +332,11 @@
     const hits = lessons.filter(([n, c, k]) => (n + ' ' + c + ' ' + k).toLowerCase().includes(s)).slice(0, 6);
     res.innerHTML = hits.length ? hits.map(([n, c, k, url, isNew]) => url ? `<a href="${url}"><span>${n}${isNew ? '<span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span>' : ''}</span><small>${c}</small></a>` : `<a style="opacity:.6">${n}<small>${c} · coming soon</small></a>`).join('') : '<a>No lesson matches that yet<small></small></a>';
     res.style.display = 'block';
+    if (window.refreshNewBadges) window.refreshNewBadges();
   }
   q.addEventListener('input', () => search(q.value));
     document.addEventListener('click', (e) => { if (!e.target.closest('.search')) res.style.display = 'none'; });
+  if (window.refreshNewBadges) window.refreshNewBadges();
 </script>
 </body>
 </html>
