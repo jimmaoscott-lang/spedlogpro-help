@@ -26,7 +26,10 @@
       if (l.group === 'Start here') { startNo += 1; tick.textContent = String(startNo); }
       if (done(l.id)) { tick.className = 'tick ok'; tick.textContent = '✓'; }
       a.appendChild(tick);
-      a.appendChild(document.createTextNode(l.title));
+      const name = document.createElement('span');
+      name.className = 'mtitle';
+      name.textContent = l.title;
+      a.appendChild(name);
       if (l.newIn) a.insertAdjacentHTML('beforeend', badge(l.newIn));
       if (l.url) a.href = l.url;
       else { a.className = 'soonlink'; const s = document.createElement('span'); s.className = 'soon'; s.textContent = 'soon'; a.appendChild(s); }
