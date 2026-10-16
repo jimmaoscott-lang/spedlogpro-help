@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Set up a TEKS Finder · SpEd Log Pro Training</title>
-<link rel="stylesheet" href="../assets/lesson.css?v=20261014b">
+<title>Set up a Goal Setup project · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css?v=20261016a">
 </head>
 <body data-lesson="teksfinder">
 <header class="top">
@@ -17,53 +17,55 @@
   <main>
     <div class="hero">
       <button class="print" onclick="window.print()">🖨 Print this lesson</button>
-      <div class="crumbs">Goals <span class="newburst" title="New lesson; works with version 0.4.2 and later"><span class="burst">NEW</span><small>for version 0.4.2 and beyond</small></span></div>
-      <h1>Set up a <span>TEKS Finder</span></h1>
+      <div class="crumbs">Goals <span class="newburst" title="New in version 0.4.20"><span class="burst">NEW</span><small>for version 0.4.20 and beyond</small></span></div>
+      <h1>Set up a <span>Goal Setup project</span></h1>
       <div class="facts"><span class="fact">⏱ About 5 minutes</span><span class="fact">🔁 Once per course</span><span class="fact">You need: a Claude account and your course's TEKS</span></div>
     </div>
-    <div class="why"><b>Why:</b> a goal raises alerts only when its TEKS codes match the lessons you log. A TEKS Finder is a Claude project that already holds your course's TEKS, so you paste just the goal's wording and get the matching codes back, in the short form SpEd Log Pro uses.</div>
+    <div class="why"><b>Why:</b> a Goal Setup project is a Claude project that already holds your course's TEKS. Paste a goal's wording and it gives back the matching TEKS codes, picks how to track the goal (checklist, rubric levels, or trial fraction), writes the checklist items or levels, and makes a <code>… - Goal Setup.csv</code> file that <a href="goal-import.html">fills in the goal pop-up</a> for you.</div>
     <div class="step"><div class="num">1</div><div>
       <h3>Get the prompt</h3>
-      <p>This short set of instructions turns a Claude project into a TEKS Finder. Your course's TEKS go in once, so after that you only paste a goal.</p>
+      <p>This set of instructions turns a Claude project into a Goal Setup project. Your course's TEKS go in once, so after that you only paste a goal.</p>
       <div class="promptcard">
-        <div class="pc-title">🎯 TEKS Finder prompt</div>
-        <div class="pc-sub">1 page · any subject · you fill in your course and paste your TEKS once</div>
+        <div class="pc-title">🎯 Goal Setup prompt</div>
+        <div class="pc-sub">3 pages · any subject · you fill in your course and add your TEKS once</div>
         <div class="pc-btns">
-          <button type="button" class="pc-copy" data-src="../assets/teks-finder-prompt.txt">📋 Copy the prompt</button>
-          <a class="pc-link" href="../assets/teks-finder-prompt.txt" download>Download as text</a>
+          <button type="button" class="pc-copy" data-src="../assets/goal-setup-prompt.txt">📋 Copy the prompt</button>
+          <a class="pc-link" href="../assets/goal-setup-prompt.txt" download>Download as text</a>
         </div>
         <div class="pc-msg" role="status"></div>
       </div>
+      <div class="tipbox"><b>Already made a TEKS Finder?</b> Keep the project and its TEKS. In its instructions, replace everything above the line <code>TEKS reference</code> with this prompt, and save. It still answers with the codes first.</div>
     </div></div>
     <div class="step"><div class="num">2</div><div>
       <h3>In Claude, make a project for your course</h3>
-      <p>Go to <b>claude.ai</b>, click <b>Projects</b> in the left sidebar, then <b>Create project</b> (it may say <b>New project</b>). Name it for the course, like <code>TEKS Finder (English 3)</code>. Teach more than one subject? Make one per course, since each has its own TEKS.</p>
+      <p>Go to <b>claude.ai</b>, click <b>Projects</b> in the left sidebar, then <b>Create project</b> (it may say <b>New project</b>). Name it for the course, like <code>Goal Setup (English 3)</code>. Teach more than one subject? Make one per course, since each has its own TEKS.</p>
     </div></div>
     <div class="step"><div class="num">3</div><div>
       <h3>Paste the prompt into the project's instructions</h3>
-      <p>Inside the project, open <b>Instructions</b> (it may say <b>Set project instructions</b>), paste the whole prompt, and save.</p>
+      <p>Inside the project, open <b>Instructions</b> (it may say <b>Set project instructions</b>), paste the whole prompt, and save. Choose <b>Sonnet</b> as the model: choosing methods and writing the file exactly right is where smaller models slip.</p>
     </div></div>
     <div class="step"><div class="num">4</div><div>
-      <h3>Fill in your course and paste your TEKS, once</h3>
-      <p>Change <code>Course: [type your course here, …]</code> to your course. Then replace the last line, <code>[Paste the complete, current TEKS for your course here …]</code>, with your course's TEKS from the Texas Education Agency's TEKS pages (the course introduction and every knowledge-and-skills statement). Save. You won't paste the TEKS again unless they change.</p>
+      <h3>Fill in your course and add your TEKS, once</h3>
+      <p>Change <code>Course: [type your course here, …]</code> to your course. Then replace the last line, <code>[Paste the complete, current TEKS for your course here …]</code>, with your course's TEKS from the Texas Education Agency's TEKS pages (the course introduction and every knowledge-and-skills statement). Or upload them to the project as a file and delete that line. Save. If anything is missing later, the project asks for it before it makes a file.</p>
     </div></div>
     <div class="step"><div class="num">5</div><div>
-      <h3>Use it: paste a goal, copy the codes</h3>
-      <p>Start a chat <b>inside the project</b> and paste the goal's wording, with the name replaced by <i>"the student"</i>. The first line of the answer is the codes, ready to paste, like <code>28A; 28B</code>, followed by a short table saying why each fits. Check them, then paste the first line into <b>TEKS code(s)</b> when you set up goal tracking.</p>
-      <div class="tipbox"><div class="privacy">⚠ <b>Never paste a student's name, ID, birthday, or anything else that identifies them.</b> Copy only the goal's wording, and replace the name with "the student" first. If a name slips in, the TEKS Finder won't repeat it and will remind you.</div></div>
+      <h3>Use it: paste a goal, save the file</h3>
+      <p>Start a chat <b>inside the project</b> and paste one goal's wording, with the name replaced by <i>"Student"</i>, worded the way you want it on the card. The answer starts with the codes, like <code>28A; 28B</code>, then why each fits, how it will be tracked, and the file. Save the file (if it only shows the text in a box, copy it into Notepad and save it ending in <code>.csv</code>). Then <a href="goal-import.html">import it</a> from the student's gear.</p>
+      <div class="tipbox"><b>On a version before 0.4.20?</b> There's no import yet: copy the first line of codes into <b>TEKS code(s)</b> when you <a href="goal-setup.html">set up goal tracking</a>.</div>
+      <div class="tipbox"><div class="privacy">⚠ <b>Never paste a student's name, ID, birthday, or anything else that identifies them.</b> Copy only the goal's wording, and replace the name with "Student" first. If a name slips in, the project won't repeat it or put it in the file, and will remind you.</div></div>
     </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The answer's first line is only codes, like <code>28A; 28B</code>.</li><li>Pasted into <b>TEKS code(s)</b>, they raise alerts when a lesson you log uses one of them.</li></ul></div>
-      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Pasting names or student details.</b> The goal's wording is all it needs.</li><li><b>Taking every code on trust.</b> Check that each fits the goal before you save it.</li><li><b>Chatting outside the project.</b> A chat outside it doesn't have your TEKS.</li></ul></div>
-      <div class="box msg"><h4>⚠ If you see this</h4><q>This goal isn't about anything in this course's TEKS</q>Common for behavior or organization goals. Leave TEKS blank and track it by observation or direct entry.<q>Paste your course's TEKS at the bottom of this project's instructions first.</q>Step 4 isn't done yet.</div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The answer's first line is only codes, like <code>28A; 28B</code>.</li><li>You get a file named like <code>Inference questions - Goal Setup.csv</code>.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Pasting names or student details.</b> The goal's wording is all it needs.</li><li><b>Taking it all on trust.</b> Check the codes and methods before you save the goal.</li><li><b>Chatting outside the project.</b> A chat outside it doesn't have your TEKS.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Paste or upload this course's TEKS first.</q>Step 4 isn't done yet.<q>What counts as mastery for this goal?</q>The goal doesn't say how it's measured. Answer, and it makes the file.</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>
   </main>
 </div>
-<script src="../assets/lessons.js?v=20261014b"></script>
-<script src="../assets/lesson.js?v=20261014b"></script>
+<script src="../assets/lessons.js?v=20261016a"></script>
+<script src="../assets/lesson.js?v=20261016a"></script>
 <script>
   // Copy button: copies the prompt's text file, clean, in one click.
   function fallbackCopy(text) {
