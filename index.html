@@ -31,12 +31,13 @@
               text-decoration: none; font-size: 14px; }
 
   /* ---------- hero ---------- */
-  .hero { position: relative; overflow: hidden; color: #fff; padding: 70px 28px 90px;
+  /* overflow-x only: the search results must be able to hang below the hero, over the cards. */
+  .hero { position: relative; overflow-x: clip; color: #fff; padding: 70px 28px 90px;
           background: radial-gradient(1200px 500px at 85% -10%, #2b4fa8 0%, transparent 60%),
                       radial-gradient(800px 500px at -10% 110%, #3b1d6e 0%, transparent 55%), var(--navy); }
   .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
                  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 22px 22px; }
-  .hero-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid;
+  .hero-inner { position: relative; z-index: 3; /* above .promise (2), so the search results sit over the cards */ max-width: 1180px; margin: 0 auto; display: grid;
                 grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .08em;
              text-transform: uppercase; color: var(--sky); font-weight: 700; }
