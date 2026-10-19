@@ -18,7 +18,7 @@ window.LESSONS = [
   { group: 'When the IEP changes', id: 'ard', title: 'Enter an ARD change', url: 'ard.html', minutes: 4 },
   { group: 'When the IEP changes', id: 'acc', title: 'Edit accommodations', url: 'accommodations.html', minutes: 3 },
   { group: 'Goals', id: 'goalsetup', title: 'Set up goal tracking', url: 'goal-setup.html', minutes: 6 },
-  { group: 'Goals', id: 'goalproject', title: 'Set up a Goal Setup project', url: 'teks-finder.html', minutes: 5, newIn: '0.4.20' },
+  { group: 'Goals', id: 'goalproject', title: 'Set up a Goal Setup project', url: 'goal-project.html', minutes: 5, newIn: '0.4.20' },
   { group: 'Goals', id: 'goalimport', title: 'Import a goal setup', url: 'goal-import.html', minutes: 3, newIn: '0.4.20' },
   { group: 'Goals', id: 'progress', title: 'Record goal progress', url: 'progress.html', minutes: 3 },
   { group: 'Goals', id: 'lessons', title: 'Import a lesson', url: 'import-lesson.html', minutes: 4 },
