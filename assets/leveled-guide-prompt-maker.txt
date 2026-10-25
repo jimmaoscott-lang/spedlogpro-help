@@ -23,7 +23,7 @@ How to run this conversation
 
 What you must never change (SpEd Log Pro depends on these exactly)
 
-- Step 7's TEKS alignment CSV: the header line "Lesson,Activity,TEKS,Percent,Expectation" and every format rule under it.
+- Step 7's TEKS alignment CSV: the header line "Lesson,Activity,TEKS,Percent,Expectation,Look for" and every format rule under it, and the Look for sentence Step 6 gives each expectation.
 - Step 8's Guide Supports CSV: the header line "Lesson,Level,Support", every format rule under it, the eighteen support names spelled exactly as written, and the four level names "Level 1", "Level 2", "Level 3", "Level 2 Large Print".
 - The two CSV file names, "[Lesson title] - TEKS Alignment.csv" and "[Lesson title] - Guide Supports.csv", which must differ only in the ending.
 - The rule that both CSVs use the same exact lesson title, and that every Activity name stays different once bracketed text is removed.
@@ -224,6 +224,7 @@ For each section the student completes:
 - List each student expectation the section uses, including skills or process expectations (for example reading, analyzing sources or data, writing, problem solving) and content expectations.
 - Give a best-guess percentage for each expectation showing how much of that section's student work uses it, based on how many boxes, questions, or items target it and how much of the thinking it drives. Percentages in each section add up to 100.
 - Add one short line explaining the estimate, and mark it High, Medium, or Low confidence.
+- Give each expectation a Look for: one sentence, about 20 words at most, telling the teacher exactly where on the handout to check this expectation and what to count. Start with the place, using the handout's own labels and numbers (the item, question, problem, box, row, card, or chart side), then say what to check or count. Name only the items that use this expectation. The teacher reads it while students are working and checks about 3 items in under a minute, so it must point to something small and specific. For example: "Questions 2 and 4: check that each names a cause and the effect it led to." or "Problems 3, 5, and 8: count how many show the units with the answer." No student names, no goals, and no answers. If an expectation has no single place on the handout to check, write "none" in the report.
 
 After the sections, give a lesson-wide summary table:
 - Each expectation used anywhere in the lesson.
@@ -236,11 +237,11 @@ Keep the report to one or two pages. Use tables. No student names and no answers
 
 Step 7 - Build the TEKS alignment CSV
 
-Its own file, made after the TEKS alignment report, for the teacher's logging app. It must agree with the report exactly: same sections, same codes, same percentages.
+Its own file, made after the TEKS alignment report, for the teacher's logging app. It must agree with the report exactly: same sections, same codes, same percentages, same Look for sentences.
 
 Follow these format rules exactly:
 - A plain CSV text file, UTF-8, comma-separated. Not a PDF and not a spreadsheet file.
-- The first line is this header, exactly: Lesson,Activity,TEKS,Percent,Expectation
+- The first line is this header, exactly: Lesson,Activity,TEKS,Percent,Expectation,Look for
 - Then one row for each expectation in each section, in handout order: the same rows as the report's section-by-section tables.
 - Lesson: the lesson title from Step 1, exactly the same on every row.
 - Activity: the section's handout title or label, exactly as it is written in the report.
@@ -248,13 +249,14 @@ Follow these format rules exactly:
 - TEKS: the exact code from the TEKS reference text. Never invent a code.
 - Percent: a whole number with no percent sign, for example 40. A section's percentages add up to 100.
 - Expectation: the short wording used in the report.
+- Look for: the Look for sentence from the report, word for word. Where the report says "none", leave this field empty (the row ends with a comma). Every row has six fields.
 - Put double quotes around any field that contains a comma. If a field contains a double quote, write it twice ("").
 - No lesson-wide summary rows, no explanation lines, no confidence ratings, no blank lines, and nothing after the last row.
 
 Example (the first rows of a U.S. History lesson; your course's codes and wording will differ):
-Lesson,Activity,TEKS,Percent,Expectation
-Causes of the Great Depression - Learn It,"Fireside Chat Analysis (Questions 1-4, highlighting)",113.41(d)(28)(A),40,analyze primary and secondary sources such as speeches to acquire information
-Causes of the Great Depression - Learn It,"Fireside Chat Analysis (Questions 1-4, highlighting)",113.41(d)(16)(B),25,"identify the causes of the Great Depression, including tariffs, stock market speculation, bank failures, and Federal Reserve monetary policy"
+Lesson,Activity,TEKS,Percent,Expectation,Look for
+Causes of the Great Depression - Learn It,"Fireside Chat Analysis (Questions 1-4, highlighting)",113.41(d)(28)(A),40,analyze primary and secondary sources such as speeches to acquire information,"Questions 1 and 3: check that each answer quotes the speech, not the textbook."
+Causes of the Great Depression - Learn It,"Fireside Chat Analysis (Questions 1-4, highlighting)",113.41(d)(16)(B),25,"identify the causes of the Great Depression, including tariffs, stock market speculation, bank failures, and Federal Reserve monetary policy","Question 2: count the causes named correctly, out of the 3 the question asks for."
 
 Step 8 - Build the Guide Supports CSV
 

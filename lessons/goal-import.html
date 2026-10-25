@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Import a goal setup · SpEd Log Pro Training</title>
-<link rel="stylesheet" href="../assets/lesson.css?v=20261019a">
+<link rel="stylesheet" href="../assets/lesson.css?v=20261025a">
 </head>
 <body data-lesson="goalimport">
 <header class="top">
@@ -29,13 +29,13 @@
     </div></div>
     <div class="step"><div class="num">2</div><div>
       <h3>Check the filled-in pop-up, then Save goal</h3>
-      <p><b>Set up goal tracking</b> opens with the file's goal text, mastery note, TEKS, and tracking methods. A grey line at the top says which file filled it. The file never sets <b>Effective</b> or <b>Next ARD</b>, so set those, and <b>Target</b> if the file didn't. Change anything you like, then <b>Save goal</b>, the same as if you'd typed it.</p>
+      <p><b>Set up goal tracking</b> opens with the file's goal text, mastery note, Goal check<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span>, TEKS, and tracking methods. A grey line at the top says which file filled it. The file never sets <b>Effective</b> or <b>Next ARD</b>, so set those, and <b>Target</b> if the file didn't. Change anything you like, then <b>Save goal</b>, the same as if you'd typed it.</p>
       <div class="fig" data-pens="535,142,284,26;675,371,143,35;535,441,284,36;516,655,62,20"><img class="shot" src="../images/n-gi-2.png" alt="Set up goal tracking, filled in from the file"></div>
       <div class="tipbox"><b>The file's goal text becomes the card's IEP Goal wording</b> when you save. Paste the goal into your project worded the way you want it on the card.</div>
     </div></div>
     <div class="step"><div class="num">3</div><div>
       <h3>Already tracking a goal? It's a revision</h3>
-      <p>If the student already has a tracked goal, <b>Revise goal</b> opens instead, with a second grey line naming what the file changes, like <code>Changed from the current goal: Goal text, TEKS, Checklist items.</code> The old goal's progress stays. Once the wording changes, the progress log starts a new count: see <a href="progress.html">Record goal progress</a>, step 5.</p>
+      <p>If the student already has a tracked goal, <b>Revise goal</b> opens instead, with a second grey line naming what the file changes, like <code>Changed from the current goal: Goal text, TEKS, Checklist items.</code> The old goal's progress stays. When the file's goal text differs from the current goal's, <b>This is a new goal (start a new count)</b> at the bottom starts ticked<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span>: leave it ticked for a new goal, or untick it if the file only corrects the wording. See <a href="progress.html">Record goal progress</a>, step 7.</p>
       <div class="fig" data-pens="535,152,284,36"><img class="shot" src="../images/n-gi-3.png" alt="Revise goal, filled in, naming what changed"></div>
     </div></div>
     <div class="step"><div class="num">4</div><div>
@@ -43,17 +43,22 @@
       <p>Nothing is filled in. The gear pop-up lists every problem by line number, like a second goal in one file, a name line, a method with no items, or a TEKS code it can't read. Ask your project for a corrected file (or fix it in Notepad), click <b>Back</b>, and import again.</p>
       <div class="fig" data-pens="542,272,241,26;340,534,39,25"><img class="shot" src="../images/n-gi-4.png" alt="A file with problems, listed by line"></div>
     </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Both Checklist and Trial fraction on? Turn one off<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <p>A goal is scored one way, never both. A file that turns on both still fills the pop-up, with a yellow line, and <b>Save goal</b> is refused until you click one of the two off. The project prompt on this site never writes both; an older file might.</p>
+      <div class="fig" data-pens="535,410,284,25;307,366,53,22;532,366,64,22"><img class="shot" src="../images/n-gi-6.png" alt="Checklist and Trial fraction are both on"></div>
+    </div></div>
 
     <div class="grid3">
       <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The pop-up opens filled in, with <code>Filled from …</code> at the top.</li><li>After <b>Save goal</b>, a green <b>IEP Goal</b> and <code>Tracking since …</code>.</li></ul></div>
       <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Saving without checking.</b> The project suggests; you decide.</li><li><b>Importing on the wrong card.</b> The gear you click decides whose goal it is.</li><li><b>Pasting names into the project.</b> The goal's wording is all it needs.</li></ul></div>
-      <div class="box msg"><h4>⚠ If you see this</h4><q>A target date is required when the target type is a fixed date.</q>The file didn't say. Pick a Target date, or switch Target to Annual ARD.<q>Nothing was saved: nothing changed from the goal already in effect.</q>The file matches the goal you're already tracking. Click Cancel.</div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>A target date is required when the target type is a fixed date.</q>The file didn't say. Pick a Target date, or switch Target to Annual ARD.<q>Nothing was saved: nothing changed from the goal already in effect.</q>The file matches the goal you're already tracking. Click Cancel.<q>Checklist and Trial fraction are both on. Turn one off before saving.</q>Do step 5.</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>
   </main>
 </div>
-<script src="../assets/lessons.js?v=20261019a"></script>
-<script src="../assets/lesson.js?v=20261019a"></script>
+<script src="../assets/lessons.js?v=20261025a"></script>
+<script src="../assets/lesson.js?v=20261025a"></script>
 </body>
 </html>

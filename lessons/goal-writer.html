@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Write a measurable goal · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css?v=20261025a">
+</head>
+<body data-lesson="goalwriter">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Goals <span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></div>
+      <h1>Write a <span>measurable goal</span></h1>
+      <div class="facts"><span class="fact">⏱ About 5 minutes to set up, then a few minutes per goal</span><span class="fact">🔁 Before an ARD</span><span class="fact">You need: a Claude account and the student's PLAAFP</span></div>
+    </div>
+    <div class="why"><b>Why:</b> a goal the app can track needs one way of scoring it, a clear count, and a plan for checking it in class. A PLAAFP Goal Writer project reads the PLAAFP, asks you a few quick questions, writes three goal choices, and then gives you the finished goal with everything around it: the TEKS it anchors to, how to measure it without the app, a note for the general education teacher, a data sheet, and a <code>… - Goal Setup.csv</code> file that <a href="goal-import.html">fills in the goal pop-up</a>. It works for any course and grade.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Get the prompt</h3>
+      <p>This set of instructions turns a Claude project into a PLAAFP Goal Writer. There's nothing to fill in.</p>
+      <div class="promptcard">
+        <div class="pc-title">✍️ PLAAFP Goal Writer prompt</div>
+        <div class="pc-sub">4 pages · any subject · nothing to fill in</div>
+        <div class="pc-btns">
+          <button type="button" class="pc-copy" data-src="../assets/plaafp-goal-writer-prompt.txt?v=20261025a">📋 Copy the prompt</button>
+          <a class="pc-link" href="../assets/plaafp-goal-writer-prompt.txt?v=20261025a" download="plaafp-goal-writer-prompt.txt">Download as text</a>
+        </div>
+        <div class="pc-msg" role="status"></div>
+      </div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>In Claude, make a project and paste the prompt</h3>
+      <p>Go to <b>claude.ai</b>, click <b>Projects</b>, then <b>Create project</b> (it may say <b>New project</b>). Name it <code>PLAAFP Goal Writer</code>. One project covers every course: it reads the course and grade from the PLAAFP. Open <b>Instructions</b> (it may say <b>Set project instructions</b>), paste the whole prompt, and save. Choose <b>Sonnet</b> as the model.</p>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Add your courses' TEKS (optional, but better)</h3>
+      <p>Upload the TEKS for the courses you write goals for as project files (the Texas Education Agency's TEKS pages: the course introduction and every knowledge-and-skills statement). Then the codes it gives come from them. Without them it still writes the goal, but labels its codes <i>"Check these codes against the current TEKS before using them in the tracker."</i></p>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Paste the PLAAFP and answer its questions</h3>
+      <p>Start a chat <b>inside the project</b> and paste the PLAAFP (or your notes) with the student's name removed. Add the ARD date and the date the goal takes effect if you have them. It asks only what the PLAAFP doesn't answer, one question at a time, each with lettered choices and one marked <i>(recommended)</i>: how progress is counted, how often, what mastery looks like, which two accommodations to name, and who collects the data. Answer with a letter.</p>
+      <div class="tipbox"><div class="privacy">⚠ <b>Never paste a student's name, ID, birthday, or anything else that identifies them.</b> The goal comes back with <code>[Student]</code> where the name goes; you add the name in your IEP software. If a name slips in, the project won't repeat it, and will remind you.</div></div>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Pick one of the three goals</h3>
+      <p>It writes three goal choices, each measured a different way (for example one correct-out-of-total, one checklist, one rubric), with a line on when each fits best. Answer <b>A</b>, <b>B</b>, or <b>C</b>, or say what to change. Every goal is scored one way: correct out of total or a checklist, never both.</p>
+    </div></div>
+    <div class="step"><div class="num">6</div><div>
+      <h3>Read the seven parts it gives you</h3>
+      <table class="codes"><tr><th>Part</th><th>What it is</th></tr>
+        <tr><td>1. The Goal</td><td>The finished goal, starting <i>In 36 instructional weeks, [Student] will…</i> (tell it if your district uses another format)</td></tr>
+        <tr><td>2. TEKS Anchor</td><td>The year-long strand, and <code>Codes: …</code> in the app's short form</td></tr>
+        <tr><td>3. Measuring it without the tracker</td><td>The data source, how often, who collects it, how to record it</td></tr>
+        <tr><td>4. SpEd Log Pro setup</td><td>Mastery note, Goal check, TEKS, target, method, percentage, and the <b>Goal Setup CSV</b></td></tr>
+        <tr><td>5. Teacher Handoff</td><td>A short note for the general education teacher</td></tr>
+        <tr><td>6. Data Sheet</td><td>A table to print, one row per data point</td></tr>
+        <tr><td>7. Form Questions</td><td>Questions for a Google Form that matches the data sheet</td></tr></table>
+    </div></div>
+    <div class="step"><div class="num">7</div><div>
+      <h3>Save the Goal Setup file and import it</h3>
+      <p>Save part 4's file (if it only shows the text in a box, copy it into Notepad and save it ending in <code>.csv</code>). After the ARD, <a href="goal-import.html">import it</a> from the student's gear. Before you click <b>Save goal</b>, change <code>[Student]</code> in the goal text to the wording you want on the card. If the codes carried the "check these" label, the file leaves TEKS out: check them, then type them into <b>TEKS code(s)</b>.</p>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>Questions come one at a time, each with lettered choices.</li><li>The last answer has all seven parts, and a file named like <code>Linear equations - Goal Setup.csv</code>.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Pasting names or student details.</b> The PLAAFP's wording is all it needs.</li><li><b>Taking it all on trust.</b> It drafts; you and the ARD committee decide the goal.</li><li><b>Chatting outside the project.</b> A chat outside it doesn't have the instructions or your TEKS.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Check these codes against the current TEKS before using them in the tracker.</q>There are no TEKS files in the project (step 3). Check the codes before you type them in.<q>Which one should I finish? A, B, or C</q>Pick one, or say what to change.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js?v=20261025a"></script>
+<script src="../assets/lesson.js?v=20261025a"></script>
+<script>
+  // Copy button: copies the prompt's text file, clean, in one click.
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove(); return ok;
+  }
+  for (const btn of document.querySelectorAll('.pc-copy')) {
+    let text = null;
+    fetch(btn.dataset.src).then((r) => r.text()).then((t) => { text = t; }).catch(() => {});
+    btn.addEventListener('click', () => {
+      const msg = btn.closest('.promptcard').querySelector('.pc-msg');
+      const done = () => { msg.textContent = 'Copied. Now paste it into the project’s instructions.'; };
+      const fail = () => { msg.textContent = 'Couldn’t copy here. Use "Download as text", open it, and copy from there.'; };
+      if (!text) { fail(); return; }
+      if (fallbackCopy(text)) { done(); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+      else fail();
+    });
+  }
+</script>
+</body>
+</html>

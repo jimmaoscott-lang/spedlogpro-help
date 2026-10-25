@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Absences & whole-class codes · SpEd Log Pro Training</title>
-<link rel="stylesheet" href="../assets/lesson.css?v=20261019a">
+<link rel="stylesheet" href="../assets/lesson.css?v=20261025a">
 </head>
 <body data-lesson="absences">
 <header class="top">
@@ -24,18 +24,20 @@
     <div class="why"><b>Why:</b> every school day in the service log needs either minutes or a reason code. A code tells the log why there was no service, and decides whether that day's minutes are still owed.</div>
     <div class="step"><div class="num">1</div><div>
       <h3>One student out: pick the reason in Absence</h3>
-      <p><code>AB</code> student absent · <code>O</code> field trip, assembly, or school function · <code>S</code> state assessment. The card's badge changes from PRESENT to the code. Their accommodations and activity aren't needed.</p>
-      <div class="fig" data-pens="828,677,197,27;721,375,30,20"><img class="shot" src="../images/n-abs-1.png" alt="Marking a student absent"></div>
+      <p><code>AB</code> student absent · <code>O</code> field trip, assembly, or school function · <code>S</code> state assessment. The badge right after the student's name changes from PRESENT to the code.</p>
+      <p><b>The card greys out</b><span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span> (the accommodation chips, Activity, and the guide row), but <b>Individual notes…</b> stays open: type why, like <code>ISS, day 1</code>. The note saves with the absent day and prints in <b>column G</b> of that day's service log line. There are no separate ISS, OSS, or BEST codes: code those days <code>AB</code> and put the reason in the note.</p>
+      <div class="fig" data-pens="329,637,195,27;293,733,231,39;269,293,28,20"><img class="shot" src="../images/n-abs-1.png" alt="Marking a student absent, with a note"></div>
     </div></div>
     <div class="step"><div class="num">2</div><div>
       <h3>Whole class out: switch on Whole-class code and pick one</h3>
       <p>Use this when nobody in the class got service for the same reason. Every card takes the code, replacing any <code>AB</code> or <code>O</code> already picked.</p>
-      <table class="codes"><tr><th>Code</th><th>Means</th><th>Lowers the minutes owed?</th></tr>
+      <table class="codes"><tr><th>Code</th><th>Means</th><th>Lowers the minutes owed?<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></th></tr>
         <tr><td><code>SAB</code></td><td>Staff absent</td><td><b>No</b>: the week may read short</td></tr>
-        <tr><td><code>SUB</code></td><td>Staff pulled to sub</td><td>Yes</td></tr>
-        <tr><td><code>ARD</code></td><td>Staff at an ARD meeting</td><td>Yes</td></tr>
+        <tr><td><code>SUB</code></td><td>Staff pulled to sub</td><td>Yes, by that day's share</td></tr>
+        <tr><td><code>ARD</code></td><td>Staff at an ARD meeting</td><td>Yes, by that day's share</td></tr>
         <tr><td><code>FLEX</code></td><td>Staff flex day</td><td><b>No</b>: the week may read short</td></tr>
-        <tr><td><code>S</code></td><td>State assessment</td><td>Yes</td></tr></table>
+        <tr><td><code>S</code></td><td>State assessment</td><td>Yes, by a full period</td></tr></table>
+      <p>A student code (<code>AB</code>, <code>O</code>, <code>S</code>), on one card or the whole class, lowers what's owed by a <b>full period</b> (the bell schedule's length that day), never below 0. So a student out most of the week isn't flagged short because of your flex day. See <a href="minutes.html">Minutes report</a>.</p>
       <div class="fig" data-pens="402,193,92,20;656,193,172,27"><img class="shot" src="../images/n-abs-2.png" alt="Whole-class code"></div>
     </div></div>
     <div class="step"><div class="num">3</div><div>
@@ -55,15 +57,15 @@
     </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The card badges show the code.</li><li>A line per period, like <code>Saved 1 student for period 2, 2026-10-20, all coded FLEX.</code></li><li>Those days drop off the Entry tab's <b>Unresolved dates</b>.</li></ul></div>
-      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>SAB and FLEX for anything else.</b> They keep the minutes owed, so use them only when it was really you out.</li><li><b>Expecting it to undo itself.</b> To take a whole-class code off, open that period on that date, switch it off, fill in the day, and Save.</li></ul></div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The badge after each name shows the code, and an absent card is greyed except its note.</li><li>A line per period, like <code>Saved 1 student for period 2, 2026-10-20, all coded FLEX.</code></li><li>Those days drop off the Entry tab's <b>Unresolved dates</b>.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>A note on a whole-class code.</b> A whole-class code takes no notes; only <code>AB</code>, <code>O</code>, and <code>S</code> on a card keep one.</li><li><b>SAB and FLEX for anything else.</b> They keep the minutes owed, so use them only when it was really you out.</li><li><b>Expecting it to undo itself.</b> To take a whole-class code off, open that period on that date, switch it off, fill in the day, and Save.</li></ul></div>
       <div class="box msg"><h4>⚠ If you see this</h4><q>Coding these students will remove their already-logged sessions …</q>That day was already saved as present. <b>Remove sessions and save</b> replaces it with the code; <b>Cancel</b> leaves it.<q>Choose a whole-class code before saving other periods.</q>Other periods are ticked but no code is picked. Pick one, then Save.</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>
   </main>
 </div>
-<script src="../assets/lessons.js?v=20261019a"></script>
-<script src="../assets/lesson.js?v=20261019a"></script>
+<script src="../assets/lessons.js?v=20261025a"></script>
+<script src="../assets/lesson.js?v=20261025a"></script>
 </body>
 </html>
