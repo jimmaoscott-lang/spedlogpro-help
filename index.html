@@ -37,7 +37,7 @@
                       radial-gradient(800px 500px at -10% 110%, #3b1d6e 0%, transparent 55%), var(--navy); }
   .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
                  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 22px 22px; }
-  .hero-inner { position: relative; z-index: 3; /* above .promise (2), so the search results sit over the cards */ max-width: 1180px; margin: 0 auto; display: grid;
+  .hero-inner { position: relative; z-index: 3; max-width: 1180px; margin: 0 auto; display: grid;
                 grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .08em;
              text-transform: uppercase; color: var(--sky); font-weight: 700; }
@@ -93,12 +93,6 @@
   .dots button { width: 9px; height: 9px; border-radius: 50%; border: 0; background: rgba(255,255,255,.3); cursor: pointer; padding: 0; }
   .dots button.on { background: var(--gold); width: 24px; border-radius: 6px; }
 
-  /* ---------- promise strip ---------- */
-  .promise { max-width: 1180px; margin: -46px auto 0; position: relative; z-index: 2; display: grid;
-             grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 0 28px; }
-  .stat { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 14px 34px rgba(20,17,13,.12); }
-  .stat .big { font-size: 34px; font-weight: 800; letter-spacing: -.02em; color: var(--blue-deep); }
-  .stat p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
 
   /* ---------- sections ---------- */
   section.wrap { scroll-margin-top: 64px; max-width: 1180px; margin: 0 auto; padding: 70px 28px 10px; }
@@ -156,7 +150,6 @@
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .device { transform: none; }
-    .promise { grid-template-columns: 1fr 1fr; }
     .tiles { grid-template-columns: 1fr; }
     .journey { grid-template-columns: repeat(3, 1fr); row-gap: 26px; }
     .journey::before { display: none; }
@@ -220,13 +213,6 @@
       <div class="dots" id="dots"></div>
     </div>
   </div>
-</div>
-
-<div class="promise">
-  <div class="stat"><div class="big">1 click</div><p>to save a whole class for the day</p></div>
-  <div class="stat"><div class="big">1 paste</div><p>per student per week into the real service log</p></div>
-  <div class="stat"><div class="big">0 bytes</div><p>leave your computer. No internet, no accounts</p></div>
-  <div class="stat"><div class="big">25</div><p>bite-size lessons, each with real screenshots</p></div>
 </div>
 
 <section class="wrap" id="tasks">
