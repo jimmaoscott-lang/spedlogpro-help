@@ -19,10 +19,11 @@
       <button class="print" onclick="window.print()">🖨 Print this lesson</button>
       <div class="crumbs">Start here · Stop 5 of 6</div>
       <h1>Add your <span>students</span></h1>
-      <div class="facts"><span class="fact">⏱ About a minute per student</span><span class="fact">🔁 Once per student</span><span class="fact">You need: your roster in the Roster folder</span></div>
+      <div class="facts"><span class="fact">⏱ About a minute per student</span><span class="fact">🔁 Once per student</span><span class="fact">You need: your roster in the Roster folder, or your roster Sheet open</span></div>
       <div class="journey-mini"><i></i><i></i><i></i><i></i><i class="now"></i><i></i><span>Stop 5 of 6</span></div>
     </div>
-    <div class="why"><b>Why:</b> the app only shows students you add, one at a time, on the period tab they belong to. It takes their minutes, accommodations, and goal from your roster, so there's nothing to retype.</div>
+    <div class="why"><b>Why:</b> the app only shows students you add, one at a time, on the period tab they belong to. It takes their minutes, accommodations, and goal from your roster, so there's nothing to retype. There are two ways in: pick from the roster CSV (Part 1), or paste the student's row straight from your Google Sheet (Part 2), handy for a new arrival when you haven't downloaded the CSV again.</div>
+    <div class="part" id="roster"><span>Part 1</span><h2>Pick from your roster</h2></div>
     <div class="step"><div class="num">1</div><div>
       <h3>Click the student’s period tab</h3>
       <p>For example <b>P2</b>. There's no period to choose anywhere else: it's the tab you're on.</p>
@@ -41,11 +42,38 @@
       <h3>Repeat for each student</h3>
       <p>Each one on their own period tab. A student who's in two of your classes needs a little extra: see <a href="two-classes.html">A student in two classes</a>.</p>
     </div></div>
+    <div class="part" id="paste"><span>Part 2</span><h2>Paste from your Google Sheet</h2></div>
+    <div class="why"><b>Why:</b> a new student shows up mid-year. Add their row to your roster Sheet, then paste that one row into the app. No new CSV to download. It also works for a student already in the app: you get the same change review as an ARD change.</div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>On the student's period tab, click Paste from Sheets…</h3>
+      <p>It's beside <b>Add Student</b>. The student goes on the tab you're on.</p>
+      <div class="fig" data-pens="529,290,92,25"><img class="shot" src="../images/n-paste-1.png" alt="The Paste from Sheets button"></div>
+    </div></div>
+    <div class="step"><div class="num">6</div><div>
+      <h3>Copy the row in your Sheet, then paste it in the box</h3>
+      <p>In your Google Sheet, click the student's <b>row number</b> (the grey number at the left) to select the whole row, and press <b>Ctrl+C</b>. Back in the app, click in the box and press <b>Ctrl+V</b>. Each field shows in its own labeled box, so you can check it and fix it before anything is added. Accommodations show the chips they'll become.</p>
+      <div class="fig" data-pens="535,232,295,30;615,367,212,23"><img class="shot" src="../images/n-paste-2.png" alt="The pasted row, one field per box"></div>
+    </div></div>
+    <div class="step"><div class="num">7</div><div>
+      <h3>Check the start date, then Add to Period …</h3>
+      <p>Scroll down. A date from your Sheet shows where it came from (<code>Read from 4/1/2027 in your Sheet.</code>). Check <b>Start date</b>, the first day on your caseload, then click <b>Add to Period 2</b> (the button names your tab). Your fixes change only what goes into the app; your Sheet and CSV are never changed.</p>
+      <div class="fig" data-pens="615,591,212,14;615,669,212,24;750,717,76,24"><img class="shot" src="../images/n-paste-3.png" alt="Start date and Add to Period 2"></div>
+    </div></div>
+    <div class="step"><div class="num">8</div><div>
+      <h3>The card appears</h3>
+      <p>A green line names who was added and from when, and their card is on the tab. From here they're an ordinary student, however they got in.</p>
+      <div class="fig" data-pens="542,145,498,14;145,202,84,16"><img class="shot" src="../images/n-paste-4.png" alt="The new student's card"></div>
+    </div></div>
+    <div class="step"><div class="num">9</div><div>
+      <h3>Already in the app? You get the change review</h3>
+      <p>Paste the row of a student you already have (say, after an ARD raised their minutes) and the box lists each difference, <b>In the app now</b> beside <b>Pasted</b>, with a tick box. Untick anything you don't want, set the <b>Effective date</b>, and click <b>Save approved changes</b>. A row that matches exactly says <code>No changes</code>. More in <a href="ard.html">Enter an ARD change</a>.</p>
+      <div class="fig" data-pens="542,416,299,25;542,503,299,20;328,571,85,24;737,619,104,24"><img class="shot" src="../images/n-paste-5.png" alt="The change review for a student already in the app"></div>
+    </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The line <code>Added Noodle, Penelope Ann (0093310) to period 2, effective …</code></li><li>The student's card appears on that tab.</li></ul></div>
-      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>The wrong tab.</b> Open the card's gear: <b>Move to another period</b>, or <b>Delete permanently</b> if nothing is logged yet.</li><li><b>An old roster.</b> New students only show once the new CSV is in the Roster folder.</li></ul></div>
-      <div class="box msg"><h4>⚠ If you see this</h4><q>"…" is not in the roster. Nothing was created.</q>Check the ID, or download your roster again (the Your roster lesson).<q>5527140 (Pickles, Dill) is already enrolled in period 5 — showing what changed on the roster.</q>They're already added, in the period it names. The table shows anything your Sheet changed; untick what you don't want.<q>"…" is on 2 rows of your roster file (rows 5 and 18).</q>Delete the extra row in your Sheet and download it again.</div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The line <code>Added Noodle, Penelope Ann (0093310) to period 2, effective …</code></li><li>The student's card appears on that tab.</li><li>Pasting: <code>Added Crumpet, Biscuit Lee (0099010) to period 2, effective …</code></li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>The wrong tab.</b> Open the card's gear: <b>Move to another period</b>, or <b>Delete permanently</b> if nothing is logged yet.</li><li><b>An old roster.</b> New students only show once the new CSV is in the Roster folder. Or paste their row instead (Part 2).</li><li><b>Moving columns in your Sheet.</b> Paste names each cell from your CSV's headings, in order. Changed the Sheet's columns? Download the CSV again first.</li><li><b>Pasting two rows.</b> One student at a time.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>"…" is not in the roster. Nothing was created.</q>Check the ID, or download your roster again (the Your roster lesson).<q>5527140 (Pickles, Dill) is already enrolled in period 5 — showing what changed on the roster.</q>They're already added, in the period it names. The table shows anything your Sheet changed; untick what you don't want.<q>"…" is on 2 rows of your roster file (rows 5 and 18).</q>Delete the extra row in your Sheet and download it again.<q>2 rows were pasted. Paste one student at a time…</q>Click just one row number in your Sheet and copy again.<q>Not added. The pasted row has … columns, but your roster CSV has …</q>The message lists the CSV's headings, numbered. Your Sheet's columns have changed: download the CSV again (the Your roster lesson).</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this stop off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>

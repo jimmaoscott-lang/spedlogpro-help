@@ -276,7 +276,7 @@
 </div></footer>
 
 <script src="assets/lessons.js?v=20261030a"></script>
-<script src="assets/search-index.js?v=20261030a"></script>
+<script src="assets/search-index.js?v=20261030b"></script>
 <script>
   // 60-second tour: each frame shows a real screenshot with the click circled in red.
   const frames = [
@@ -305,7 +305,7 @@
   show(2); // open on a screen with students on it
 
   const lessons = [
-    ['Back up to Drive', 'Start here', 'backup drive desktop weekly panel', 'lessons/backup.html'], ['Load the calendar', 'Start here', 'calendar dates school year xlsx', 'lessons/calendar.html'], ['Set the bell schedule', 'Start here', 'bell schedule period times length period surplus report room time notes print', 'lessons/bells.html'], ['Add your students', 'Start here', 'add student roster new', 'lessons/add-students.html'], ['Log your first day', 'Start here', 'log day save activity chips accommodations absent badge present', 'lessons/first-day.html'], 
+    ['Back up to Drive', 'Start here', 'backup drive desktop weekly panel', 'lessons/backup.html'], ['Load the calendar', 'Start here', 'calendar dates school year xlsx', 'lessons/calendar.html'], ['Set the bell schedule', 'Start here', 'bell schedule period times length period surplus report room time notes print', 'lessons/bells.html'], ['Add your students', 'Start here', 'paste from sheets google sheet copy row new student mid year arrival add student roster new', 'lessons/add-students.html'], ['Log your first day', 'Start here', 'log day save activity chips accommodations absent badge present', 'lessons/first-day.html'], 
     ['Log a day', 'Every day', 'activity save chips accommodations', 'lessons/first-day.html'], ['Absences & whole-class codes', 'Every day', 'absent AB SAB FLEX sub code ISS OSS BEST note column G greyed grey minutes owed full period', 'lessons/absences.html'],
     ['Catch up on missed days', 'Every day', 'unresolved missed late', 'lessons/catchup.html'], ['Paste a week into the service log', 'Paste & report', 'paste copy service log block column F G goal progress correct of note', 'lessons/paste.html'],
     ['Minutes report', 'Paste & report', 'minutes compliance short adjusted full period print pdf', 'lessons/minutes.html'], ['Accommodations report', 'Paste & report', 'declined accommodations used when offered delivered days present print pdf ARD', 'lessons/acc-report.html'],
@@ -368,7 +368,7 @@
   const docs = [...pooled.values()].map(([title, group, keys, url, isNew]) => {
     const page = byUrl[url] || { heads: [], body: '' };
     return { title, group, url, isNew, heads: page.heads,
-      fields: [[bag(title + ' ' + group), 6], [bag(keys), 4], [bag(page.heads.join(' ')), 3], [bag(page.body), 1]],
+      fields: [[bag(title), 6], [bag(keys), 4], [bag(group), 2], [bag(page.heads.join(' ')), 3], [bag(page.body), 1]],
       headBags: page.heads.map((h) => [h, bag(h)]) };
   });
   const vocab = [...new Set(docs.flatMap((d) => d.fields.flatMap(([b]) => [...b])))];
