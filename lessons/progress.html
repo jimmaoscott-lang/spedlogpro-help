@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Record goal progress · SpEd Log Pro Training</title>
-<link rel="stylesheet" href="../assets/lesson.css?v=20261029a">
+<title>Goal progress: record, report, fix · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css?v=20261030a">
 </head>
 <body data-lesson="progress">
 <header class="top">
@@ -18,60 +18,106 @@
     <div class="hero">
       <button class="print" onclick="window.print()">🖨 Print this lesson</button>
       <div class="crumbs">Goals</div>
-      <h1>Record <span>goal progress</span></h1>
-      <div class="facts"><span class="fact">⏱ About 2 minutes per alert</span><span class="fact">🔁 Whenever an alert appears</span><span class="fact">You need: a tracked goal</span></div>
+      <h1>Goal progress: <span>record, report, fix</span></h1>
+      <div class="facts"><span class="fact">⏱ About 2 minutes per alert</span><span class="fact">🔁 Whenever an alert appears; each report period</span><span class="fact">You need: a tracked goal</span></div>
     </div>
-    <div class="why"><b>Why:</b> when you save a day whose TEKS match a student's goal, that student gets an alert. Recording the result builds the progress log and the percentages, and it goes into column F of the service log for that day.</div>
+    <div class="why"><b>Why:</b> when you save a day whose TEKS match a student's goal, that student gets an alert. Recording the result builds the progress log and the percentages, and it goes into column F of the service log for that day. The same goal pop-up also drafts a progress report sentence and lets you delete a mistake.</div>
+    <div class="part" id="record"><span>Part 1</span><h2>Record progress</h2></div>
     <div class="step"><div class="num">1</div><div>
       <h3>Click the number next to IEP Goal</h3>
       <p>That number is how many alerts are waiting. Here, saving the <i>Bees in the City</i> reading (TEKS 28B) raised one for Waffles, on top of two older ones.</p>
       <div class="fig" data-pens="160,538,26,23"><img class="shot" src="../images/n-prog-1.png" alt="The alert badge"></div>
     </div></div>
     <div class="step"><div class="num">2</div><div>
-      <h3>Pick the alert you have evidence for<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <h3>Pick the alert you have evidence for</h3>
       <p><b>Open alerts</b> lists every open alert for the student, oldest first: the date, the TEKS that matched, and that day's activity. Click the one you want. To clear a backlog in one sitting, click <b>Work through all (oldest first)</b> instead.</p>
       <div class="fig" data-pens="542,476,289,23;377,332,128,27"><img class="shot" src="../images/n-prog-2.png" alt="The Open alerts list"></div>
     </div></div>
     <div class="step"><div class="num">3</div><div>
-      <h3>Read the Goal check and the Look for<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <h3>Read the Goal check and the Look for</h3>
       <p>Under the goal, <b>Goal check</b> says how you planned to check this goal in class (you type it when you <a href="goal-setup.html">set up the goal</a>). If the day's activity came from a lesson file with a Look for column, the black box with yellow text, <b>LOOK FOR</b>, says where that TEKS shows up in the activity and what to count. A typed activity shows no Look for.</p>
       <div class="fig" data-pens="535,233,274,25;535,309,272,56"><img class="shot" src="../images/n-prog-3.png" alt="Goal check and Look for"></div>
     </div></div>
     <div class="step"><div class="num">4</div><div>
-      <h3>Fill in what happened<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <h3>Fill in what happened</h3>
       <p>The pop-up shows the goal's own methods. Tick each <b>Checklist</b> item the student met (it counts as you go), or type <b>Correct _ of _</b> on a trial-fraction goal. A goal has one or the other, never both. Pick a <b>Rubric level</b> if the goal has one, and add a <b>Note</b> if you like.</p>
       <p>Until you tick something the line reads <code>Nothing ticked (not saved)</code>. If the student tried and showed none of the items, tick <b>None of these yet</b>, the last row: that records a real 0%.</p>
       <div class="fig" data-pens="535,477,261,14"><img class="shot" src="../images/n-prog-4.png" alt="Filling in the checklist"></div>
     </div></div>
     <div class="step"><div class="num">5</div><div>
-      <h3>Save, Save score later, Dismiss, or Close<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <h3>Save, Save score later, Dismiss, or Close</h3>
       <p><b>Save</b> records it, dated to the lesson's day, and takes you back to the list (it closes once no alerts are left). <b>Dismiss</b> if it doesn't apply (absent, modified work): nothing is recorded. <b>Close</b> leaves it waiting.</p>
       <div class="fig" data-pens="769,729,39,27;651,729,80,27"><img class="shot" src="../images/n-prog-4.png" alt="The buttons"></div>
       <p><b>Save, score later</b> is for work you'll score after class: it saves the rubric pick and the note now and leaves the alert open. The list then reads <code>Waiting for score</code>; open it again when the work comes back and fill in the score. Under <b>Work through all</b>, <b>Skip</b> goes on to the next alert without saving.</p>
       <div class="fig" data-pens="542,455,289,34"><img class="shot" src="../images/n-prog-6.png" alt="Waiting for score"></div>
     </div></div>
     <div class="step"><div class="num">6</div><div>
-      <h3>See it in the progress log<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
+      <h3>See it in the progress log</h3>
       <p>Open <b>IEP Goal</b>: each day is one line with everything recorded that day, then the activity, for example <code>Checklist 2 of 3 (67%); Rubric: With verbal prompt; Note: …</code>. A trial reads <code>Correct 7 of 10 (70%)</code>. Hover over a line to see which items were ticked. <b>Last 5</b> and <b>All-time</b> sit on top.</p>
-      <p>No alert for the day you want? <b>Record progress…</b> opens the same pop-up for any tracked goal, dated to the Log date. If that date already has an open alert, it opens that alert instead. Next to it, <b>Write progress report…</b> drafts a report sentence: see <a href="progress-report.html">Write a progress report</a><span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span>. Recorded something by mistake? See <a href="fix-progress.html">Fix or delete recorded progress</a><span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span>.</p>
+      <p>No alert for the day you want? <b>Record progress…</b> opens the same pop-up for any tracked goal, dated to the Log date. If that date already has an open alert, it opens that alert instead. Next to it, <b>Write progress report…</b> drafts a report sentence: see <a href="#report">Part 2</a>. Recorded something by mistake? See <a href="#fix">Part 3</a>.</p>
       <div class="fig" data-pens="535,617,292,25;535,290,294,15;318,662,75,24"><img class="shot" src="../images/n-prog-5.png" alt="The progress log"></div>
     </div></div>
     <div class="step"><div class="num">7</div><div>
-      <h3>A new goal starts a new count<span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span></h3>
-      <p>A new count starts only when you tick <b>This is a new goal (start a new count)</b> at the bottom of <b>Revise goal…</b> (a new IEP, say). The log then shows <code>New goal from …</code> where it starts, greys the old goal's entries, and the percentages count only the new goal: <b>All-time</b> reads <b>Since …</b>. Leave the box unticked for a fix or an update, even one that changes the wording (a typo, new TEKS, a corrected mastery note): the count carries on. A <a href="goal-import.html">Goal Setup file</a> with new goal wording ticks the box for you; untick it if the file only corrects the wording.</p>
+      <h3>A new goal starts a new count</h3>
+      <p>A new count starts only when you tick <b>This is a new goal (start a new count)</b> at the bottom of <b>Revise goal…</b> (a new IEP, say). The log then shows <code>New goal from …</code> where it starts, greys the old goal's entries, and the percentages count only the new goal: <b>All-time</b> reads <b>Since …</b>. Leave the box unticked for a fix or an update, even one that changes the wording (a typo, new TEKS, a corrected mastery note): the count carries on. A <a href="goal-project.html#import">Goal Setup file</a> with new goal wording ticks the box for you; untick it if the file only corrects the wording.</p>
       <div class="fig" data-pens="338,559,95,15;535,290,294,15"><img class="shot" src="../images/n-prog-5.png" alt="The progress log after a new goal"></div>
+    </div></div>
+    <div class="part" id="report"><span>Part 2</span><h2>Write a progress report</h2></div>
+    <div class="why"><b>Why:</b> a progress report needs a sentence like the goal, rewritten as where the student is now. The app drafts it from the goal's own wording and the percentage it has worked out, so you start from a draft instead of a blank box. Nothing about it is saved.</div>
+    <div class="step"><div class="num">8</div><div>
+      <h3>Open IEP Goal, then Write progress report…</h3>
+      <p>On the student's card, click <b>IEP Goal</b>. The button sits beside <b>Record progress…</b>, under the progress log.</p>
+      <div class="fig" data-pens="479,554,90,24;542,392,301,15"><img class="shot" src="../images/n-rep-0.png" alt="Write progress report button"></div>
+    </div></div>
+    <div class="step"><div class="num">9</div><div>
+      <h3>Read the reminder, then OK</h3>
+      <p>The percentage in a progress report is yours to decide, so check the number against the student's work. <b>OK</b> goes on. <b>Hide for 3 weeks</b> goes on too, and keeps the reminder away for every student until the 21st day after you click it.</p>
+      <div class="fig" data-pens="730,464,33,27;615,464,82,27"><img class="shot" src="../images/n-rep-1.png" alt="The reminder"></div>
+    </div></div>
+    <div class="step"><div class="num">10</div><div>
+      <h3>Which number? Pick one</h3>
+      <p><b>Last 5</b> or <b>All-time</b> (it reads <b>Since …</b> after a new goal). They're the same numbers Goal tracking shows. With no checklist or trial-fraction entries yet, the box fills straight away with <code>__%</code> for you to type the number into.</p>
+      <div class="fig" data-pens="345,320,90,26"><img class="shot" src="../images/n-rep-2.png" alt="Which number?"></div>
+    </div></div>
+    <div class="step"><div class="num">11</div><div>
+      <h3>Check the draft, edit it, then Copy</h3>
+      <p>The box gets the goal's wording, changed three ways: an opening like <code>By the end of the year,</code>, <code>By May 2027,</code>, or <code>In 36 instructional weeks,</code> comes off; every "will" becomes "can"; and the first percentage becomes the number you picked (here 80% became 83%). Edit it however you like, click <b>Copy</b>, and paste it into the report.</p>
+      <p><b>Yellow notes</b> under the box say what to check, and never stop you: the goal counts attempts ("4 of 5"), so count the progress log lines yourself; the goal has more than one percentage (only the first changed); it has no percentage; or it has no "will" to change.</p>
+      <div class="fig" data-pens="542,395,289,77;542,528,289,25;793,579,41,27"><img class="shot" src="../images/n-rep-3.png" alt="The drafted statement"></div>
+    </div></div>
+    <div class="part" id="fix"><span>Part 3</span><h2>Fix or delete recorded progress</h2></div>
+    <div class="why"><b>Why:</b> a score on the wrong student, the wrong day, or a typo in a note would otherwise sit in the progress log and in column F for good. You can delete one entry, or everything for that day, and then record it again the right way. There's no edit: delete, then record again.</div>
+    <div class="step"><div class="num">12</div><div>
+      <h3>Open IEP Goal and click the day's line</h3>
+      <p>In the progress log, click the line for the day you want to fix.</p>
+      <div class="fig" data-pens="542,509,299,25"><img class="shot" src="../images/n-del-1.png" alt="Click a progress log line"></div>
+    </div></div>
+    <div class="step"><div class="num">13</div><div>
+      <h3>Pick what to delete</h3>
+      <p><b>Progress on …</b> lists each entry from that day with its own red <b>Delete…</b>. To clear the whole day, click <b>Delete all for this day…</b>. <b>Close</b> changes nothing.</p>
+      <div class="fig" data-pens="761,431,51,27;637,485,103,27"><img class="shot" src="../images/n-del-2.png" alt="Progress on a date"></div>
+    </div></div>
+    <div class="step"><div class="num">14</div><div>
+      <h3>Check it, then Delete</h3>
+      <p>The question names exactly what will go. <b>Delete</b> removes it; <b>Cancel</b> goes back.</p>
+      <div class="fig" data-pens="778,487,46,27"><img class="shot" src="../images/n-del-3.png" alt="Delete this entry?"></div>
+    </div></div>
+    <div class="step"><div class="num">15</div><div>
+      <h3>Read the green line, and copy the log again</h3>
+      <p>Under the progress log, a green line says what went, and the percentages update. If that day had come from an alert and you deleted its last entry, the alert opens again so you can record it properly. If the day was already pasted into the service log, copy that range again and paste over it (see <a href="paste.html">Paste a week into the log</a>).</p>
+      <div class="fig" data-pens="356,523,115,15;542,495,299,15"><img class="shot" src="../images/n-del-4.png" alt="Deleted 1 entry"></div>
     </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The alert is gone from the list, and the number went down.</li><li>One new line for that day in the progress log, and the percentages updated.</li><li>An alert saved for later reads <code>Waiting for score</code>.</li></ul></div>
-      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Saving an empty checklist to mean 0%.</b> Nothing ticked saves nothing. Tick <b>None of these yet</b> for a real 0%.</li><li><b>Dismiss when you meant Close.</b> Dismiss records nothing and closes the alert for good.</li></ul></div>
-      <div class="box msg"><h4>⚠ If you see this</h4><q>Fill in at least one method, or tick None of these yet.</q>Tick an item, type a score, pick a level, or write a note first.<q>Fill in at least one method before saving.</q>The same, on a goal with no checklist.</div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The alert is gone from the list, and the number went down.</li><li>One new line for that day in the progress log, and the percentages updated.</li><li>An alert saved for later reads <code>Waiting for score</code>.</li><li>The box reads like the goal, with "can" for "will" and your number in it.</li><li>Paste it in the report, and it's what you copied.</li><li><code>Deleted 1 entry from 2026-10-08.</code> under the log.</li><li>That day's line is shorter, or gone.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Saving an empty checklist to mean 0%.</b> Nothing ticked saves nothing. Tick <b>None of these yet</b> for a real 0%.</li><li><b>Dismiss when you meant Close.</b> Dismiss records nothing and closes the alert for good.</li><li><b>Taking the number on trust.</b> It's worked out from what you recorded. Check it against the work.</li><li><b>Expecting it to be kept.</b> Nothing here is saved. Copy it before you close.</li><li><b>Deleting to change one number.</b> That's fine, but record it again straight away, dated to the same day (set the Log date first).</li><li><b>Forgetting the real log.</b> Column F still has the old text until you copy and paste that range again.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Fill in at least one method, or tick None of these yet.</q>Tick an item, type a score, pick a level, or write a note first.<q>Fill in at least one method before saving.</q>The same, on a goal with no checklist.<q>This goal counts attempts ("4 of 5").</q>The card's percentages are averages, not counts. Count the lines in the progress log before you decide.<q>Replace your changes with a fresh statement?</q>You typed in the box, then picked a number. <b>Keep my changes</b> keeps your typing; <b>Replace</b> starts the draft again.<q>The alert for … is open again.</q>You deleted the last entry from an alert's day. Record it from the alert, or Dismiss it.<q>This can't be undone except by restoring a whole backup.</q>Check what's named before you click Delete.</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>
   </main>
 </div>
-<script src="../assets/lessons.js?v=20261029a"></script>
-<script src="../assets/lesson.js?v=20261029a"></script>
+<script src="../assets/lessons.js?v=20261030a"></script>
+<script src="../assets/lesson.js?v=20261030a"></script>
 </body>
 </html>

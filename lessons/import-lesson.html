@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Import a lesson · SpEd Log Pro Training</title>
-<link rel="stylesheet" href="../assets/lesson.css?v=20261029a">
+<title>Import a lesson, organize it by unit · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css?v=20261030a">
 </head>
 <body data-lesson="lessons">
 <header class="top">
@@ -17,21 +17,22 @@
   <main>
     <div class="hero">
       <button class="print" onclick="window.print()">🖨 Print this lesson</button>
-      <div class="crumbs">Goals</div>
-      <h1>Import a <span>lesson</span></h1>
-      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Once per lesson</span><span class="fact">You need: the lesson's TEKS Alignment CSV</span></div>
+      <div class="crumbs">Lessons &amp; leveled guides</div>
+      <h1>Import a lesson, <span>organize it by unit</span></h1>
+      <div class="facts"><span class="fact">⏱ About 5 minutes</span><span class="fact">🔁 Once per lesson; once per unit</span><span class="fact">You need: the lesson's TEKS Alignment CSV</span></div>
     </div>
-    <div class="why"><b>Why:</b> your lesson project makes a TEKS Alignment file for each lesson. Import it once, and on the period page you can pick an activity instead of typing the Activity and TEKS. Its codes raise goal alerts exactly as if you'd typed them. <b>Don't have a lesson project yet?</b> See <a href="builder.html">Set up the Leveled Guide Builder</a><span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span>; it makes this file. <b>Already using leveled guides?</b> See <a href="guides-setup.html">Leveled guides: set up</a><span class="newburst" title="New in version 0.4.18"><span class="burst">NEW</span><small>for version 0.4.18 and beyond</small></span>.</div>
+    <div class="why"><b>Why:</b> your lesson project makes a TEKS Alignment file for each lesson. Import it once, and on the period page you can pick an activity instead of typing the Activity and TEKS. Its codes raise goal alerts exactly as if you'd typed them. <b>Don't have a lesson project yet?</b> See <a href="builder.html">Set up the Leveled Guide Builder</a>; it makes this file. <b>Already using leveled guides?</b> See <a href="guides-setup.html">Leveled guides: set up</a>.</div>
+    <div class="part" id="import"><span>Part 1</span><h2>Import a lesson and pick its activities</h2></div>
     <div class="step"><div class="num">1</div><div>
       <h3>Settings → Lesson activities → Import lesson CSV…</h3>
       <p>Pick the lesson's <code>… - TEKS Alignment.csv</code>. A preview shows each activity (brackets removed from the names) and its codes in your short form (<code>113.41(d)(28)(A)</code> becomes <code>28A</code>).</p>
       <div class="fig" data-pens="136,342,97,27;542,477,487,17"><img class="shot" src="../images/n-les-1.png" alt="The lesson preview"></div>
-      <p><b>A Look for column?</b><span class="newburst" title="New in version 0.4.21"><span class="burst">NEW</span><small>for version 0.4.21 and beyond</small></span> A file from a newer builder prompt has a sixth column, <code>Look for</code>. The preview shows each one in grey under its code, and so does the lesson's list under <b>Imported lessons</b>. It tells you where to check that TEKS in the activity, and it shows on the goal alerts that activity raises. A file without the column imports exactly as before.</p>
+      <p><b>A Look for column?</b> A file from a newer builder prompt has a sixth column, <code>Look for</code>. The preview shows each one in grey under its code, and so does the lesson's list under <b>Imported lessons</b>. It tells you where to check that TEKS in the activity, and it shows on the goal alerts that activity raises. A file without the column imports exactly as before.</p>
       <div class="fig" data-pens="702,330,318,14;701,520,318,14"><img class="shot" src="../images/n-les-5.png" alt="Look for lines in the preview"></div>
     </div></div>
     <div class="step"><div class="num">2</div><div>
       <h3>Choose its unit, tick the periods that teach it, then Import</h3>
-      <p><b>Put in unit</b><span class="newburst" title="New in version 0.4.22"><span class="burst">NEW</span><small>for version 0.4.22 and beyond</small></span> starts on the unit of the lesson you imported last; change it if this lesson belongs elsewhere (see <a href="units.html">Organize lessons into units</a>). Under <b>Show this lesson on</b>, tick at least one period. You can tick more later under Imported lessons.</p>
+      <p><b>Put in unit</b><span class="newburst" title="New in version 0.4.22"><span class="burst">NEW</span><small>for version 0.4.22 and beyond</small></span> starts on the unit of the lesson you imported last; change it if this lesson belongs elsewhere (see <a href="#units">Part 2</a>). Under <b>Show this lesson on</b>, tick at least one period. You can tick more later under Imported lessons.</p>
       <div class="fig" data-pens="542,629,485,25;140,696,34,20;104,741,45,24"><img class="shot" src="../images/n-les-2.png" alt="Put in unit and Show this lesson on"></div>
     </div></div>
     <div class="step"><div class="num">3</div><div>
@@ -54,17 +55,38 @@
       <p>Each activity is <b>added</b> to the Activity boxes (after a <code>;</code>) and its codes to the TEKS box. Nothing is saved until you click <b>Save</b>.</p>
       <div class="fig" data-pens="245,242,186,23;727,242,136,23;228,193,86,24"><img class="shot" src="../images/n-les-4.png" alt="Filled in"></div>
     </div></div>
+    <div class="part" id="units"><span>Part 2</span><h2>Organize lessons into units<span class="newburst" title="New in version 0.4.22"><span class="burst">NEW</span><small>for version 0.4.22 and beyond</small></span></h2></div>
+    <div class="why"><b>Why:</b> as the year goes on, the lesson list gets long. Units group your lessons, and the newest unit (highest number) is always at the top, so the unit you're teaching now is the first thing you see in <b>Lesson activity…</b>.</div>
+    <div class="step"><div class="num">7</div><div>
+      <h3>Settings → Lesson activities → Units: Add unit</h3>
+      <p>Type the unit's number (1 to 99) and, if you like, its name, then click <b>Add unit</b>. The name is optional: with none it's just <code>Unit 6</code>. The new unit shows at the top of <b>Imported lessons</b>, saying it has no lessons yet.</p>
+      <div class="fig" data-pens="542,119,502,26;542,156,502,17;542,246,495,30"><img class="shot" src="../images/n-unit-1.png" alt="Add unit"></div>
+    </div></div>
+    <div class="step"><div class="num">8</div><div>
+      <h3>Put each lesson in its unit</h3>
+      <p>Every lesson has a <b>Unit</b> dropdown on its title bar. Choose the unit, and the lesson moves there right away. Its period ticks and activities don't change. Lessons you had before units start in <b>No unit</b>, at the bottom.</p>
+      <div class="fig" data-pens="542,48,502,17;459,552,122,23"><img class="shot" src="../images/n-unit-2.png" alt="A lesson's Unit dropdown"></div>
+    </div></div>
+    <div class="step"><div class="num">9</div><div>
+      <h3>Rename or delete a unit</h3>
+      <p><b>Rename</b> opens the number and name in two boxes; change them and click <b>Save</b>. <b>Delete unit</b> asks first, then moves its lessons to <b>No unit</b>. No lesson or activity is ever deleted with it.</p>
+      <div class="fig" data-pens="472,326,51,25;576,326,61,25;551,377,476,25"><img class="shot" src="../images/n-unit-3.png" alt="Rename and Delete unit"></div>
+    </div></div>
+    <div class="step"><div class="num">10</div><div>
+      <h3>New lessons go straight into a unit</h3>
+      <p>When you import a lesson, <b>Put in unit</b> starts on the unit of the lesson you imported last, so a run of lessons from one unit goes in together. See step 2 above.</p>
+    </div></div>
 
     <div class="grid3">
-      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li><code>Imported "The New Deal - Learn It": 3 activities, 13 codes. In Unit 5 — The New Deal. Shows on P2.</code></li><li>Picking fills the Activity and TEKS boxes.</li></ul></div>
-      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>No period ticked.</b> Import is refused until one is.</li><li><b>Expecting it to replace what you typed.</b> It adds after a <code>;</code>.</li><li><b>Clicking Cancel or Done to undo a pick.</b> They only close the pop-up; delete the text from the box instead.</li></ul></div>
-      <div class="box msg"><h4>⚠ If you see this</h4><q>Not imported: "…" has 2 problems. Nothing was saved.</q>Each problem is listed by line number. Fix the file and import again.<q>No lessons for Period … yet.</q>Tick that period for a lesson in Settings → Lesson activities.</div>
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li><code>Imported "The New Deal - Learn It": 3 activities, 13 codes. In Unit 5 — The New Deal. Shows on P2.</code></li><li>Picking fills the Activity and TEKS boxes.</li><li><code>Added Unit 6 — World War II.</code></li><li><code>Saved: "…" is in Unit 4 — The Great Depression.</code></li><li><b>Lesson activity…</b> opens on <b>Pick a unit</b>, newest first.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>No period ticked.</b> Import is refused until one is.</li><li><b>Expecting it to replace what you typed.</b> It adds after a <code>;</code>.</li><li><b>Clicking Cancel or Done to undo a pick.</b> They only close the pop-up; delete the text from the box instead.</li><li><b>Writing "Unit 3" in the name box.</b> The number has its own box; the name is just the topic.</li><li><b>Looking for an empty unit on a period page.</b> The pop-up only lists units with a lesson for that period.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Not imported: "…" has 2 problems. Nothing was saved.</q>Each problem is listed by line number. Fix the file and import again.<q>No lessons for Period … yet.</q>Tick that period for a lesson in Settings → Lesson activities.<q>Unit 3 already exists (The Great Depression). Nothing was saved.</q>Each number is used once. Pick another number, or Rename the one you have.</div>
     </div>
     <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
     <div class="navbtns" id="lesson-nav"></div>
   </main>
 </div>
-<script src="../assets/lessons.js?v=20261029a"></script>
-<script src="../assets/lesson.js?v=20261029a"></script>
+<script src="../assets/lessons.js?v=20261030a"></script>
+<script src="../assets/lesson.js?v=20261030a"></script>
 </body>
 </html>
