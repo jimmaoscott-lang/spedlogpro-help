@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Behavior report · SpEd Log Pro Training</title>
+<link rel="stylesheet" href="../assets/lesson.css?v=20261103a">
+</head>
+<body data-lesson="behaviorreport">
+<header class="top">
+  <a class="logo" href="../"><span class="mark"><i></i><i></i><i></i><i></i></span>SpEd <b>Log</b> Pro <span style="font-weight:500;opacity:.7">Training</span></a>
+  <a class="mini-search" href="../" style="text-decoration:none">🔍 Search lessons…</a>
+</header>
+<div class="layout">
+  <aside id="menu"></aside>
+  <main>
+    <div class="hero">
+      <button class="print" onclick="window.print()">🖨 Print this lesson</button>
+      <div class="crumbs">Behavior <span class="newburst" title="New in version 0.4.23"><span class="burst">NEW</span><small>for version 0.4.23 and beyond</small></span></div>
+      <h1>The <span>Behavior report</span></h1>
+      <div class="facts"><span class="fact">⏱ About 4 minutes</span><span class="fact">🔁 Before a BIP review or an ARD</span><span class="fact">You need: some logged behavior</span></div>
+    </div>
+    <div class="why"><b>Why:</b> it turns a few weeks of quick checks into numbers: how often each behavior happened out of the periods you served the student, whether it's getting better or worse, and whether it happens in only one room.</div>
+    <div class="step"><div class="num">1</div><div>
+      <h3>Settings → Behavior report</h3>
+      <p>Click in <b>District ID</b> and pick the student (or type the ID), choose <b>From</b> and <b>To</b>, then click <b>Compute</b>.</p>
+      <div class="fig" data-pens="235,147,109,23;505,185,53,24"><img class="shot" src="../images/n-behrep-1.png" alt="Behavior report"></div>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>The top line: served periods</h3>
+      <p>A <b>served period</b> is a date and period with the day saved while the student was present, or with a behavior entry. Absent and coded days, and whole-class code days, are left out. A served period with no entry counts as <b>no issues</b>, so you don't log quiet days: <code>9 served periods: 5 with a behavior entry, 4 with none (counted as no issues).</code></p>
+      <div class="fig" data-pens="300,222,260,14"><img class="shot" src="../images/n-behrep-1.png" alt="The top line"></div>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>One row per behavior, with a trend</h3>
+      <p>BIP targets come first. <b>Times logged</b> is out of the served periods (<code>2 of 9, 22%</code>). Then, for the times you filled them in: <b>% of class</b> (an average), <b>Count</b>, <b>Minutes</b>, and how often each <b>Choice</b> was tapped. A detail you never filled in stays blank.</p>
+      <p><b>Trend</b> splits the range in half by date and compares the two shares: <b>Fewer</b>, <b>More</b>, or <b>About the same</b> (within 10 points), with both shares after it. For replacement behaviors (like <i>Used a coping strategy</i>), <b>More</b> is the good direction.</p>
+      <div class="fig" data-pens="970,339,70,31"><img class="shot" src="../images/n-behrep-1.png" alt="Behavior rows and the trend"></div>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Redirections, By period, and every entry</h3>
+      <p><b>Redirections</b> gives the total, the average per served period, and how often the student responded. <b>Before</b> and <b>After</b> count each chip. <b>By period</b> shows each class separately, so you can see if something happens in only one room. <b>Entries by date</b> lists every entry with its notes; one on a day later marked absent says <code>(day now marked AB; not counted above)</code>.</p>
+      <div class="fig" data-pens="542,46,498,15;542,234,496,30;625,465,407,14"><img class="shot" src="../images/n-behrep-2.png" alt="Redirections, By period, Entries by date"></div>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Print it, or save it as a PDF</h3>
+      <p><b>Print…</b> beside <b>Compute</b> works like the other reports: greyed until Compute shows a result, and again if you change the student or a date. Pick a printer, or <b>Microsoft Print to PDF</b>. The printout is headed <i>Behavior report, student ID name, dates</i>.</p>
+      <div class="fig" data-pens="605,185,43,24"><img class="shot" src="../images/n-behrep-1.png" alt="Print… beside Compute"></div>
+    </div></div>
+
+    <div class="grid3">
+      <div class="box ok"><h4>✓ You'll know it worked</h4><ul><li>The top line's numbers add up: with an entry + with none = served periods.</li><li>Come back to Settings after logging more and the report updates by itself.</li></ul></div>
+      <div class="box bad"><h4>✕ Avoid these</h4><ul><li><b>Reading 0% as "never".</b> It means never <i>logged</i>; quiet days count as no issues.</li><li><b>A one-week range for the trend.</b> Short ranges often say <i>Not enough days to compare</i>.</li></ul></div>
+      <div class="box msg"><h4>⚠ If you see this</h4><q>Not logged in this range</q>The behavior is switched on but nothing was logged between those dates.</div>
+    </div>
+    <label class="done-row"><input type="checkbox" id="did"> <span><b>I did this.</b> Ticks this lesson off in the menu (saved in this browser only).</span></label>
+    <div class="navbtns" id="lesson-nav"></div>
+  </main>
+</div>
+<script src="../assets/lessons.js?v=20261103a"></script>
+<script src="../assets/lesson.js?v=20261103a"></script>
+</body>
+</html>

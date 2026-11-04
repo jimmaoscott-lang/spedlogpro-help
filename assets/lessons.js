@@ -24,6 +24,8 @@ window.LESSONS = [
   { group: 'Lessons & leveled guides', id: 'lessons', title: 'Import a lesson, organize it by unit', url: 'import-lesson.html', minutes: 8 },
   { group: 'Lessons & leveled guides', id: 'builder', title: 'Set up the Leveled Guide Builder', url: 'builder.html', minutes: 10 },
   { group: 'Lessons & leveled guides', id: 'guidesetup', title: 'Leveled guides', url: 'guides-setup.html', minutes: 7 },
+  { group: 'Behavior', id: 'behavior', title: 'Log behavior', url: 'behavior.html', minutes: 6, newIn: '0.4.23' },
+  { group: 'Behavior', id: 'behaviorreport', title: 'Behavior report', url: 'behavior-report.html', minutes: 4, newIn: '0.4.23' },
   { group: 'Keep it safe', id: 'update', title: 'Update to a new version', url: 'update.html', minutes: 5 },
   { group: 'Keep it safe', id: 'restore', title: 'Restore a backup', url: 'restore.html', minutes: 4 },
   { group: 'Keep it safe', id: 'august', title: 'August year-end', url: 'august.html', minutes: 10 },
