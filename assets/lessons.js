@@ -2,6 +2,7 @@
 // `newIn` marks a lesson for a newer app version: it gets the NEW starburst wherever it's linked.
 // The menu, the Previous/Next buttons, and the "I did this" ticks all read this one list.
 window.LESSONS = [
+  { group: 'Start here', id: 'install', title: 'Install the app', url: 'install.html', minutes: 5 },
   { group: 'Start here', id: 'backup', title: 'Back up to Drive', url: 'backup.html', minutes: 3 },
   { group: 'Start here', id: 'calendar', title: 'Load the calendar', url: 'calendar.html', minutes: 5 },
   { group: 'Start here', id: 'bells', title: 'Set the bell schedule', url: 'bells.html', minutes: 3 },
